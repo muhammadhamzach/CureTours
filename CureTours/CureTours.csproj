@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="AdminPortal.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="LoginStyle.css" />
     <Content Include="SignUp.aspx" />
     <Content Include="UserPortal.aspx" />
     <Content Include="Web.config" />

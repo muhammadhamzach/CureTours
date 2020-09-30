@@ -11,7 +11,7 @@
     </head>
     <body>
         <form id="form1" runat="server">
-            <p style="font-size:24px">CureTours</p>
+            <h1>CureTours</h1>
             <p>Username</p>
             <asp:TextBox ID="Username" runat="server" Width="250px"></asp:TextBox>
             <p>Password</p>
@@ -19,7 +19,7 @@
             <p>
                 <asp:Button ID="LogInButton" runat="server" Text="LogIn" Width="250px" OnClick="LogInButton_Click" />
             </p>
-            <p>Dont Have an account?</p>
+            <p>Dont have an account?</p>
             <p>
                 <asp:Button ID="SignUpButton" runat="server" Text="SignUp" Width="250px" OnClick="SignUpButton_Click" />
             </p>
