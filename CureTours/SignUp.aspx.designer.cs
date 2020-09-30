@@ -24,13 +24,22 @@ namespace CureTours
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// UsernamBox control.
+        /// UsernameBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UsernamBox;
+        protected global::System.Web.UI.WebControls.TextBox UsernameBox;
+
+        /// <summary>
+        /// reqUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqUserName;
 
         /// <summary>
         /// PasswordBox control.
@@ -42,6 +51,15 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox PasswordBox;
 
         /// <summary>
+        /// reqPassWprd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPassWprd;
+
+        /// <summary>
         /// NameBox control.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NameBox;
+
+        /// <summary>
+        /// reqName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqName;
 
         /// <summary>
         /// TeamListDropDown control.
@@ -60,6 +87,15 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.DropDownList TeamListDropDown;
 
         /// <summary>
+        /// reqTeamName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTeamName;
+
+        /// <summary>
         /// PhoneBox control.
         /// </summary>
         /// <remarks>
@@ -67,6 +103,24 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PhoneBox;
+
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+
+        /// <summary>
+        /// reqPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPhoneNo;
 
         /// <summary>
         /// EmailBox control.
@@ -85,6 +139,15 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
+        /// reqEmailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqEmailAddress;
 
         /// <summary>
         /// TextBox1 control.

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CureTours
 {
@@ -39,7 +41,24 @@ namespace CureTours
 
         protected void SignUpSubmit_Click(object sender, EventArgs e)
         {
-            
+            string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SIGNUP_VERIFY", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@USERNAME", UsernameBox.Text);
+                connection.Open();
+                try
+                {
+                    string user_role = cmd.ExecuteScalar().ToString();
+                    if (!user_role.Equals("admin") && !user_role.Equals("user"))
+                        Response.Write("good");
+                }
+                catch
+                {
+                    
+                }
+            }
         }
     }
 }
