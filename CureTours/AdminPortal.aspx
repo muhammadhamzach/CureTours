@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <p> Admin Portal</p>
+        <asp:Button ID="NewTourCreationButton" runat="server" OnClick="NewTourCreationButton_Click" Text="Create New Tour" />
     </form>
 </body>
 </html>

@@ -13,5 +13,10 @@ namespace CureTours
         {
 
         }
+
+        protected void NewTourCreationButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateTour.aspx");
+        }
     }
 }

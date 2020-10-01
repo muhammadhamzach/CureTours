@@ -46,11 +46,7 @@ namespace CureTours
 
         protected void SignUpSubmit_Click(object sender, EventArgs e)
         {
-            bool username_verify = UsernameBox_TextVerify();
-            bool team_verify = Team_CategoryVerify();
-           
-
-            if (username_verify && team_verify)
+            if (UsernameBox_TextVerify())
             {
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
@@ -64,28 +60,13 @@ namespace CureTours
                     cmd.Parameters.AddWithValue("@EMAIL", EmailBox.Text);
                     cmd.Parameters.AddWithValue("@DESCRIPTION", DescriptionBox.Text);
                     connection.Open();
-                    try
-                    {
+                    try { 
                         cmd.ExecuteNonQuery();
                     }
-                    catch
-                    {
-
-                    }
-
+                    catch{}
                 }
                 Response.Redirect("Login.aspx");
             }
-            
-        }
-
-
-        protected bool Team_CategoryVerify()
-        {
-            if (!TeamListDropDown.SelectedItem.Text.Equals("Please Select--"))
-                return true;    
-            TeamLabel.Text = "Please select your team";
-            return false;
         }
 
         protected bool UsernameBox_TextVerify()
@@ -102,30 +83,14 @@ namespace CureTours
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     if (dt.Rows.Count == 0)
-                    {
-                        if (UsernameBox.Text.Length > 15)
-                            UsernameLabel.Text = "Username too long";
-                        else if (UsernameBox.Text.Length < 5)
-                            UsernameLabel.Text = "Username too short";
-                        else
-                        {
-                            UsernameLabel.Text = "xD";
-                            return true;
-                        }
-                            
-                    }
+                        return true;
                     else
                         UsernameLabel.Text = "Username already exists";
                 }
-                catch
-                {
-                    UsernameLabel.Text = "Username Error";
-                }
+                catch { }
             }
             return false;
         }
 
-
-        
     }
 }

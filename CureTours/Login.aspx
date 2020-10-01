@@ -19,6 +19,9 @@
             <p>
                 <asp:Button ID="LogInButton" runat="server" Text="LogIn" Width="250px" OnClick="LogInButton_Click" />
             </p>
+            <p>
+                <asp:Label ID="LoginErrorLabel" runat="server" ForeColor="Red"></asp:Label>
+            </p>
             <p>Dont have an account?</p>
             <p>
                 <asp:Button ID="SignUpButton" runat="server" Text="SignUp" Width="250px" OnClick="SignUpButton_Click" />

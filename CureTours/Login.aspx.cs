@@ -13,14 +13,14 @@ namespace CureTours
 {
     public partial class Login : System.Web.UI.Page
     {
+        string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         protected void LogInButton_Click(object sender, EventArgs e)
         {
-            string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand("LOGINVERIFY", connection);
@@ -46,13 +46,10 @@ namespace CureTours
                     }
                     else
                     {
-                        Response.Write("Invalid LogIn");
+                        LoginErrorLabel.Text = "Invalid Login Attempt, Try Again";
                     }
                 }
-                catch
-                {
-                    Response.Write("Invalid");
-                }
+                catch { }
             }
         }
 

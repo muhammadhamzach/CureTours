@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPortal.aspx" />
+    <Content Include="CreateTour.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="UserPortal.aspx" />
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="AdminPortal.aspx.designer.cs">
       <DependentUpon>AdminPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTour.aspx.cs">
+      <DependentUpon>CreateTour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTour.aspx.designer.cs">
+      <DependentUpon>CreateTour.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
