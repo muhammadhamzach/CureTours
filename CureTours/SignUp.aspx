@@ -4,65 +4,73 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            text-align: left;
-        }
-    </style>
+    <title>Sign Up Page</title>
+    
 </head>
 <body>
     <form id="form1" runat="server">
         <h1>Sign Up Portal</h1>
         <p class="auto-style1">Username 
-            <asp:TextBox ID="UsernameBox" runat="server" style="margin-left: 59px" Width="201px"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" id="reqUserName" controltovalidate="UsernameBox" ForeColor="Red" errormessage="Please enter a username!" />
+            <asp:TextBox ID="UsernameBox" runat="server" style="margin-left: 59px" Width="201px" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
+            <asp:Label ID="UsernameLabel" runat="server" ForeColor="Red"></asp:Label>
         </p>
         
         <p>Password
-            <asp:TextBox ID="PasswordBox" runat="server" style="margin-left: 62px" Width="195px"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" id="reqPassWprd" controltovalidate="PasswordBox" ForeColor="Red" errormessage="Please enter Password for your profile!" />
+            <asp:TextBox ID="PasswordBox" runat="server" style="margin-left: 62px" Width="195px" TextMode="Password"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="passwordvalidator" 
+                runat="server"  ForeColor="Red" 
+                ErrorMessage="Invalid Password"
+                ValidationExpression="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+                ControlToValidate="PasswordBox">
+            </asp:RegularExpressionValidator>
         </p>
+        <p style ="font-size: 12px">Make sure password is atleast 8 character long, contains atleast 1 Uppercase, 1 Lowercase, 1 Number and 1 Special Character</p>
 
         <p>Name
             <asp:TextBox ID="NameBox" runat="server" style="margin-left: 90px" Width="195px"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="NameBox" ForeColor="Red" errormessage="Please enter your Name!" />
+            <asp:RegularExpressionValidator ID="namevalidator" 
+                runat="server"  ForeColor="Red" 
+                ErrorMessage="Invalid character in Name"
+                ValidationExpression="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
+                ControlToValidate="NameBox">
+            </asp:RegularExpressionValidator>
+
         </p>
 
         <p>Team
             <asp:DropDownList ID="TeamListDropDown" runat="server" Height="30px" style="margin-left: 93px" Width="202px">
                 <asp:ListItem Text="Please Select--" Value="0"></asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" id="reqTeamName" controltovalidate="TeamListDropDown" ForeColor="Red" errormessage="Please select your team!" />
+            <asp:Label ID="TeamLabel" runat="server" ForeColor="Red"></asp:Label>
         </p>
 
-        <p>Phone
-            <asp:TextBox ID="PhoneBox" runat="server" style="margin-left: 90px" Width="195px">+92-XXX-XXXXXXX</asp:TextBox>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
-                    runat="server" ErrorMessage="Enter valid Phone number" 
-                    ForeColor="Red"  Display = "Dynamic" 
-                    ControlToValidate="PhoneBox" 
-                    ValidationExpression= "/^[0-9]{0,5}[ ]{0,1}[0-9]{0,6}$/g"></asp:RegularExpressionValidator>
-            <asp:RequiredFieldValidator runat="server" id="reqPhoneNo" controltovalidate="PhoneBox" ForeColor="Red" errormessage="Please enter your phone number!" />
+        <p>Mobile No
+            <asp:TextBox ID="PhoneBox" runat="server" style="margin-left: 54px" Width="195px">+92-XXX-XXXXXXX</asp:TextBox>
+            <asp:RegularExpressionValidator ID="mobilenumbervalidator" 
+                runat="server"  ForeColor="Red" 
+                ErrorMessage="Invalid Mobile Number Style"
+                ValidationExpression="^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$"
+                ControlToValidate="PhoneBox">
+            </asp:RegularExpressionValidator>
         </p>
 
         <p>Email
             <asp:TextBox ID="EmailBox" runat="server" style="margin-left: 90px" Width="195px"></asp:TextBox>
             <!--Email Verification Regex Query -->
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" 
+            <asp:RegularExpressionValidator ID="emailvalidator" 
                     runat="server" 
                     ControlToValidate="EmailBox"
                     ForeColor="Red" 
                     ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                     Display = "Dynamic" 
-                    ErrorMessage = "Invalid email address"/>
-            <asp:RequiredFieldValidator runat="server" id="reqEmailAddress" controltovalidate="EmailBox" ForeColor="Red" errormessage="Please enter your email!" />
+                    ErrorMessage = "Invalid email address">
+            </asp:RegularExpressionValidator>
        
         </p>
 
         <p>About You!
             <br />
-            <asp:TextBox ID="TextBox1" runat="server" Height="77px" Width="338px"></asp:TextBox>
+            <asp:TextBox ID="DescriptionBox" runat="server" Height="77px" Width="338px"></asp:TextBox>
         </p>
         
         <asp:Button ID="SignUpSubmit" runat="server" Text="Submit" Width="344px" OnClick="SignUpSubmit_Click" />

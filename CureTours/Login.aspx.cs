@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Web.Security;
 
 namespace CureTours
 {
@@ -27,15 +29,29 @@ namespace CureTours
                 cmd.Parameters.AddWithValue("@PASS", Password.Text);
                 connection.Open();
                 try {
-                    string user_role = cmd.ExecuteScalar().ToString();
-                    if (user_role.Equals("admin"))
-                        Response.Redirect("AdminPortal.aspx");
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        FormsAuthentication.RedirectFromLoginPage(Username.Text, false);
+                        if (dt.Rows[0][0].ToString().Equals("admin"))
+                        {
+                            Response.Redirect("AdminPortal.aspx");
+                        }
+                        else if (dt.Rows[0][0].ToString().Equals("user"))
+                        {
+                            Response.Redirect("UserPortal.aspx");
+                        }
+                    }
                     else
-                        Response.Redirect("UserPortal.aspx");
+                    {
+                        Response.Write("Invalid LogIn");
+                    }
                 }
                 catch
                 {
-                    Response.Write("Invalid Username or Password");
+                    Response.Write("Invalid");
                 }
             }
         }
