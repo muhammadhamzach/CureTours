@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CureTours.SignUp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CureTours.SignUp" Culture = "en-GB"%>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
         <h1>Sign Up Portal</h1>
 
         <p class="auto-style1">Username 
-            *<asp:TextBox ID="UsernameBox" runat="server" style="margin-left: 59px" Width="201px" AutoPostBack="True" CausesValidation="True"></asp:TextBox>
+            *<asp:TextBox ID="UsernameBox" runat="server" style="margin-left: 59px" Width="201px" AutoPostBack="True" CausesValidation="True" placeholder ="Enter a username"></asp:TextBox>
             <asp:Label ID="UsernameLabel" runat="server" ForeColor="Red"></asp:Label>
             <asp:RegularExpressionValidator ID="usernamevalidator" 
                 runat="server"  ForeColor="Red" 
@@ -29,7 +29,7 @@
         </p>
         
         <p>Password
-            *<asp:TextBox ID="PasswordBox" runat="server" style="margin-left: 62px" Width="195px" TextMode="Password"></asp:TextBox>
+            *<asp:TextBox ID="PasswordBox" runat="server" style="margin-left: 62px" Width="195px" TextMode="Password" placeholder ="Enter password for sign-in:"></asp:TextBox>
             <asp:RegularExpressionValidator ID="passwordvalidator" 
                 runat="server"  ForeColor="Red" 
                 ErrorMessage="Invalid Password"
@@ -45,7 +45,7 @@
         <p style ="font-size: 12px">Make sure password is atleast 8 character long, contains atleast 1 Uppercase, 1 Lowercase, 1 Number and 1 Special Character</p>
 
         <p>Name
-            *<asp:TextBox ID="NameBox" runat="server" style="margin-left: 90px" Width="195px"></asp:TextBox>
+            *<asp:TextBox ID="NameBox" runat="server" style="margin-left: 90px" Width="195px" placeholder ="Enter your Name"></asp:TextBox>
             <asp:RegularExpressionValidator ID="namevalidator" 
                 runat="server"  ForeColor="Red" 
                 ErrorMessage="Invalid character in Name"
@@ -71,7 +71,7 @@
         </p>
 
         <p>Mobile No
-            *<asp:TextBox ID="PhoneBox" runat="server" style="margin-left: 54px" Width="195px">+92-XXX-XXXXXXX</asp:TextBox>
+            *<asp:TextBox ID="PhoneBox" runat="server" style="margin-left: 54px" Width="195px" placeholder ="+92-XXX-XXXXXXX"></asp:TextBox>
             <asp:RegularExpressionValidator ID="mobilenumbervalidator" 
                 runat="server"  ForeColor="Red" 
                 ErrorMessage="Invalid Mobile Number Style"
@@ -86,7 +86,7 @@
         </p>
 
         <p>Email
-            *<asp:TextBox ID="EmailBox" runat="server" style="margin-left: 90px" Width="195px"></asp:TextBox>
+            *<asp:TextBox ID="EmailBox" runat="server" style="margin-left: 90px" Width="195px" placeholder ="Enter your email address:"></asp:TextBox>
             <!--Email Verification Regex Query -->
             <asp:RegularExpressionValidator ID="emailvalidator" 
                     runat="server" 
@@ -106,14 +106,19 @@
 
         <p>About You!
             <br />
-            <asp:TextBox ID="DescriptionBox" runat="server" Height="77px" Width="338px"></asp:TextBox>
+            <asp:TextBox ID="DescriptionBox" runat="server" Height="77px" Width="338px" TextMode="MultiLine"></asp:TextBox>
         </p>
         
         <asp:Button ID="SignUpSubmit" runat="server" Text="Submit" Width="344px" OnClick="SignUpSubmit_Click" />
         
-        <p>
-            &nbsp;</p>
-        
+        <br />
+        <br />
+        Already a user?<p>
+            <asp:Button ID="LogInButton" runat="server" OnClick="LogInButton_Click" Text="Log In" Width="126px" CausesValidation="False" />
+        </p>
     </form>
+        
+        
+    
 </body>
 </html>

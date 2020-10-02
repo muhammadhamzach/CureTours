@@ -16,7 +16,6 @@ namespace CureTours
         string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void TourSaveButton_Click(object sender, EventArgs e)
@@ -30,6 +29,7 @@ namespace CureTours
                 cmd.Parameters.AddWithValue("@TODATE", Convert.ToDateTime(DateToBox.Text));
                 cmd.Parameters.AddWithValue("@DETAILS", PlanBox.Text);
                 cmd.Parameters.AddWithValue("@TOTALSEATS", Int32.Parse(SeatCountBox.Text));
+                cmd.Parameters.AddWithValue("@COST", Int32.Parse(CostBox.Text));
                 connection.Open();
                 try
                 {
@@ -37,6 +37,11 @@ namespace CureTours
                 }
                 catch { }
             }
+            Response.Redirect("AdminPortal.aspx");
+        }
+
+        protected void ReturnButton_Click(object sender, EventArgs e)
+        {
             Response.Redirect("AdminPortal.aspx");
         }
     }

@@ -71,6 +71,7 @@
     <Content Include="CreateTour.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="TourDetailsPage.aspx" />
     <Content Include="UserPortal.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -103,6 +104,13 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TourDetailsPage.aspx.cs">
+      <DependentUpon>TourDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourDetailsPage.aspx.designer.cs">
+      <DependentUpon>TourDetailsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPortal.aspx.cs">
       <DependentUpon>UserPortal.aspx</DependentUpon>

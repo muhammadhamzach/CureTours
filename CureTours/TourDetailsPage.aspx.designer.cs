@@ -11,7 +11,7 @@ namespace CureTours
 {
 
 
-    public partial class UserPortal
+    public partial class TourDetailsPage
     {
 
         /// <summary>
@@ -24,66 +24,57 @@ namespace CureTours
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// NameLabelTag control.
+        /// TourTitleTag control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NameLabelTag;
+        protected global::System.Web.UI.WebControls.Label TourTitleTag;
 
         /// <summary>
-        /// NameLabel control.
+        /// FinalListViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NameLabel;
+        protected global::System.Web.UI.WebControls.Button FinalListViewer;
 
         /// <summary>
-        /// RoleLabelTag control.
+        /// FinalizedUserViewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RoleLabelTag;
+        protected global::System.Web.UI.WebControls.GridView FinalizedUserViewer;
 
         /// <summary>
-        /// UserRoleLabel control.
+        /// DetailsMessageLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label UserRoleLabel;
+        protected global::System.Web.UI.WebControls.Label DetailsMessageLabel;
 
         /// <summary>
-        /// TourInterestLabel control.
+        /// TourInterestedDetailsGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TourInterestLabel;
+        protected global::System.Web.UI.WebControls.GridView TourInterestedDetailsGrid;
 
         /// <summary>
-        /// TourGrid control.
+        /// ReturnButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView TourGrid;
-
-        /// <summary>
-        /// LogOutButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogOutButton;
+        protected global::System.Web.UI.WebControls.Button ReturnButton;
     }
 }

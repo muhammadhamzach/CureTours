@@ -92,5 +92,9 @@ namespace CureTours
             return false;
         }
 
+        protected void LogInButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }
