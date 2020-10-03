@@ -11,11 +11,14 @@
 
 
 body {
-    background-image:url(/pics/LoginBackground.jpg);
-    width:100%;
-    height:100%;
-    padding:0;
-    margin:0;
+    background-image: url(/pics/LoginBackground.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .ProjectTitle
@@ -34,10 +37,20 @@ body {
 
 .Logbox{
     margin-top:2%;
-    margin-bottom:12%;
+    margin-bottom:2%;
+}
+
+.errorlabel{
+    /*margin-bottom:10%;*/
 }
 
 .loginForm{
     margin-top: 4%;
     padding-left:65%;
+}
+
+.signup {
+    font-size: 25px;
+    margin-top: 12%;
+    margin-bottom:2%;
 }

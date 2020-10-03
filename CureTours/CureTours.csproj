@@ -72,11 +72,13 @@
     <Content Include="Login.aspx" />
     <Content Include="pics\LoginBackground.jpg" />
     <Content Include="pics\SignUpBackground.jpg" />
+    <Content Include="pics\UserPortalBackground.jpg" />
     <Content Include="SignUp.aspx" />
     <Content Include="style\AdminPortalStyle.css" />
     <Content Include="style\CreateTourStyle.css" />
     <Content Include="style\LoginStyle.css" />
     <Content Include="style\SignUpStyle.css" />
+    <Content Include="style\UserPortalStyle.css" />
     <Content Include="TourDetailsPage.aspx" />
     <Content Include="UserPortal.aspx" />
     <Content Include="Web.config" />

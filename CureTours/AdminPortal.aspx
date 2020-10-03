@@ -31,7 +31,7 @@
             
             <div class="infoGrid">
                 <asp:GridView ID="TourGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" 
-                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="80%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
+                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="90%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
                     <EditRowStyle HorizontalAlign="Center" />
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -50,7 +50,8 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            </div>
+         </div>
+
             <p class="logOut"> <asp:Button ID="LogOutButton" runat="server" OnClick="LogOutButton_Click" Text="Log Out" Height="25px" Width="170px" /> </p>
             </div>
         

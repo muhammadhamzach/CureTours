@@ -1,0 +1,22 @@
+﻿body {
+    background-image: url(/pics/UserPortalBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Title{
+    padding-right:50%;
+}
+.infoGrid {
+    padding-top: 1%;
+    padding-left: 20%;
+}
+
+.logOut {
+    padding-left: 44%;
+}
+
+.message{
+    padding-top:1%;
+    padding-left:20%;
+}
