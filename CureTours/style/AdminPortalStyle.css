@@ -1,0 +1,75 @@
+﻿html {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.Title {
+    text-decoration:underline;
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 55%;
+    float: left;
+}
+
+.userRoleTag{
+    font-weight:bold;
+    padding-top:1.5%;
+    font-size:20px;
+}
+
+.roleTag1{
+    padding-top:0.5%;
+}
+
+.details{
+    clear:both;
+    margin-top:4%;
+
+}
+
+.detailsTitle{
+    font-size: 30px;
+    padding-left:10%;
+}
+
+.newTour {
+    padding-left:72%;
+    padding-bottom:1%;
+    padding-top:1%;
+}
+
+.infoGrid{
+    padding-left:10%;
+}
+
+.detailsButton{
+    padding: 0 10px;
+}
+
+.logOut{
+    padding-top:8%;
+    padding-left:10%;
+}
+
+#TourGrid td {
+    padding: 8px 10px;
+}
+
+#TourGrid th {
+    
+    padding: 8px 20px;
+}
+

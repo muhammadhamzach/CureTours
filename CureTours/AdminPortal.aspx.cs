@@ -41,6 +41,7 @@ namespace CureTours
                     {
                         TourGrid.DataSource = reader;
                         TourGrid.DataBind();
+                        TourGrid.CellPadding = 8;
                     }
                 }
                 catch { }

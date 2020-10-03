@@ -79,7 +79,7 @@ END
 
 CREATE OR ALTER PROCEDURE ADMIN_TOUR_SHOW
 AS BEGIN
-	SELECT Title, CONVERT(date, FromDate) AS FromDate, CONVERT(date,ToDate) As ToDate, PlanDetails, CostPerHead, TotalSeatCount, RemainSeatCount from tourlist
+	SELECT Title AS [Tour Title], CONVERT(date, FromDate) AS FromDate, CONVERT(date,ToDate) As ToDate, PlanDetails, CostPerHead, TotalSeatCount, RemainSeatCount from tourlist
 END
 
 CREATE OR ALTER PROCEDURE SHOW_INTERESTED_DETAILS

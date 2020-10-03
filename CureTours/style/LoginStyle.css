@@ -1,0 +1,43 @@
+﻿html {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-image:url(/pics/LoginBackground.jpg);
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+.ProjectTitle
+{
+    padding-left:65%;
+    padding-top:4%;
+    font-size:30px;
+}
+
+.text {
+    font-size:25px;
+    margin-bottom:2%;
+    margin-top:2%;
+    
+}
+
+.Logbox{
+    margin-top:2%;
+    margin-bottom:12%;
+}
+
+.loginForm{
+    margin-top: 4%;
+    padding-left:65%;
+}

@@ -1,0 +1,42 @@
+﻿html {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.pageTitle {
+    text-decoration: underline;
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 55%;
+}
+
+.tourForm {
+    padding-top: 2%;
+    padding-left: 10%;
+}
+.text{
+    font-size:20px;
+    margin: 1% 0;
+}
+
+.saveButton{
+    padding-top:2%;
+}
+
+.returnButton{
+    padding-top:3%;
+    padding-left:2%;
+}

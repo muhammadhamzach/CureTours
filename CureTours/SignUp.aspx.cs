@@ -29,7 +29,9 @@ namespace CureTours
             CureX = 9,
             DevOps = 10,
             HR = 11,
-            IT = 12
+            IT = 12,
+            Database = 13
+               
         }
 
         protected void Page_Load(object sender, EventArgs e)
