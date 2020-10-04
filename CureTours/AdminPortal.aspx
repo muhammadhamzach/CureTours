@@ -8,7 +8,7 @@
     <title>Cure Tours (admin)</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" class="forms" runat="server">
         <div>
             <h1 class="Title"> Admin Portal</h1>
 
@@ -31,7 +31,7 @@
             
             <div class="infoGrid">
                 <asp:GridView ID="TourGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" 
-                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="90%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
+                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="85%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
                     <EditRowStyle HorizontalAlign="Center" />
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

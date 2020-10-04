@@ -16,10 +16,13 @@ body {
     margin: 0;
 }
 
+.forms{
+    padding-left:10%;
+}
+
 .Title {
     text-decoration:underline;
     padding-top: 2%;
-    padding-left: 10%;
     padding-right: 55%;
     float: left;
 }
@@ -36,23 +39,19 @@ body {
 
 .details{
     clear:both;
-    margin-top:4%;
-
+    
+    padding-top:4%;
 }
 
 .detailsTitle{
     font-size: 30px;
-    padding-left:10%;
 }
+
 
 .newTour {
-    padding-left:72%;
+    padding-left:74%;
     padding-bottom:1%;
     padding-top:1%;
-}
-
-.infoGrid{
-    padding-left:10%;
 }
 
 .detailsButton{
@@ -61,7 +60,6 @@ body {
 
 .logOut{
     padding-top:8%;
-    padding-left:10%;
 }
 
 #TourGrid td {

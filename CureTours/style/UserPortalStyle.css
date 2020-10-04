@@ -5,8 +5,14 @@
 }
 
 .Title{
+    padding-left:10%;
     padding-right:50%;
 }
+
+.detailsTitle {
+    padding-left: 10%;
+}
+
 .infoGrid {
     padding-top: 1%;
     padding-left: 20%;

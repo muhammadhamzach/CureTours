@@ -78,6 +78,7 @@
     <Content Include="style\CreateTourStyle.css" />
     <Content Include="style\LoginStyle.css" />
     <Content Include="style\SignUpStyle.css" />
+    <Content Include="style\TourDetailsPageStyle.css" />
     <Content Include="style\UserPortalStyle.css" />
     <Content Include="TourDetailsPage.aspx" />
     <Content Include="UserPortal.aspx" />
@@ -129,7 +130,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

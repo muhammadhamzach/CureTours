@@ -9,17 +9,17 @@
     <title>User Portal</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1"  runat="server">
         <div>
             <h1 class="Title">User Tour Portal</h1>
             <div class="userRoleTag">
                 <p>
                     <asp:Label ID="NameLabelTag" runat="server" Text="Name:"></asp:Label>
-                    <asp:Label ID="NameLabel" runat="server"></asp:Label>
+                    <asp:Label ID="NameLabel" runat="server" Font-Bold="False"></asp:Label>
                 </p>
                 <p class="roleTag1">
                     <asp:Label ID="RoleLabelTag" runat="server" Text="Role:"></asp:Label>
-                    <asp:Label ID="UserRoleLabel" runat="server"></asp:Label>
+                    <asp:Label ID="UserRoleLabel" runat="server" Font-Bold="False"></asp:Label>
             </p>
             </div>
         </div>
