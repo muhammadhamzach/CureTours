@@ -1,3 +1,5 @@
+CREATE DATABASE Tours
+
 USE Tours
 
 CREATE TABLE logindetails (UserID INT PRIMARY KEY IDENTITY(0,1), Username varchar(20) NOT NULL UNIQUE, UserPassword varchar(20) NOT NULL, UserRole varchar (5) NOT NULL);
