@@ -13,6 +13,7 @@ namespace CureTours
 {
     public partial class AdminPortal : System.Web.UI.Page
     {
+        string TourID = "";
         string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -51,8 +52,8 @@ namespace CureTours
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Cells[2].Text = Convert.ToDateTime(e.Row.Cells[2].Text).ToString("dd-MM-yyyy");
                 e.Row.Cells[3].Text = Convert.ToDateTime(e.Row.Cells[3].Text).ToString("dd-MM-yyyy");
+                e.Row.Cells[4].Text = Convert.ToDateTime(e.Row.Cells[4].Text).ToString("dd-MM-yyyy");
             }
         }
 
@@ -63,8 +64,8 @@ namespace CureTours
                 Button lb = (Button)sender;
                 GridViewRow Row = (GridViewRow)lb.NamingContainer;
                 GridViewRow row = TourGrid.Rows[Row.RowIndex];
-                string title = row.Cells[1].Text.ToString();
-                Response.Redirect("TourDetailsPage.aspx?TourTitle=" + title);
+                string ID = row.Cells[1].Text.ToString();
+                Response.Redirect("TourDetailsPage.aspx?ID=" + ID);
             }
         }
 

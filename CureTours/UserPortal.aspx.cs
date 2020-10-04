@@ -17,6 +17,7 @@ namespace CureTours
         string Username ="";
         string Name = "";
         string User_Role = "";
+        string UserID = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,17 +28,18 @@ namespace CureTours
             }
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                SqlCommand cmd1 = new SqlCommand("RETURN_NAME", connection);
-                SqlCommand cmd2 = new SqlCommand("RETURN_ROLE", connection);
-                cmd1.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd2.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd1.Parameters.AddWithValue("@USERNAME", Username);
-                cmd2.Parameters.AddWithValue("@USERNAME", Username);
+                SqlCommand cmd = new SqlCommand("RETURN_NAME_ROLE", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@USERNAME", Username);
                 connection.Open();
                 try
                 {
-                    Name = cmd1.ExecuteScalar().ToString();
-                    User_Role = cmd2.ExecuteScalar().ToString();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    UserID = dt.Rows[0][0].ToString();
+                    Name = dt.Rows[0][1].ToString();
+                    User_Role = dt.Rows[0][2].ToString();
                 }
                 catch { }
             }
@@ -73,25 +75,26 @@ namespace CureTours
                 GridViewRow Row = (GridViewRow)lb.NamingContainer;
                 GridViewRow row = TourGrid.Rows[Row.RowIndex];
                 bool valid_date = dateComparator(Row.RowIndex);
-                int rem_seats = Int32.Parse(row.Cells[5].Text.ToString());
+                int rem_seats = Int32.Parse(row.Cells[6].Text.ToString());
                 if (rem_seats == 0)
                     TourInterestLabel.Text = "No Seat Remainings!";
                 else if (!valid_date)
                     TourInterestLabel.Text = "Time to register has exceeded!";
                 else
                 {
-                    TourInterestLabel.Text = "Request Submitted!";
+                    
                     using (SqlConnection connection = new SqlConnection(ConnectionString))
                     {
                         SqlCommand cmd = new SqlCommand("INTERESTED_USER_LIST", connection);
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@USERNAME", Username);
-                        cmd.Parameters.AddWithValue("@TOURTITLE", row.Cells[1].Text.ToString());
+                        cmd.Parameters.AddWithValue("@UserID", UserID);
+                        cmd.Parameters.AddWithValue("@TOURID", row.Cells[1].Text.ToString());
                         cmd.Parameters.AddWithValue("@TIME", DateTime.Now);
                         connection.Open();
                         try
                         {
                             cmd.ExecuteNonQuery();
+                            TourInterestLabel.Text = "Request Submitted!";
                         }
                         catch { }
                     }
@@ -102,7 +105,7 @@ namespace CureTours
         protected bool dateComparator(int rowIndex)
         {
             GridViewRow row = TourGrid.Rows[rowIndex];
-            DateTime dt1 = DateTime.Parse(row.Cells[2].Text.ToString());
+            DateTime dt1 = DateTime.Parse(row.Cells[3].Text.ToString());
             DateTime dt2 = DateTime.Now;
             if (dt1.Date > dt2.Date)
                 return true;
@@ -114,8 +117,8 @@ namespace CureTours
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Cells[2].Text = Convert.ToDateTime(e.Row.Cells[2].Text).ToString("dd-MM-yyyy");
                 e.Row.Cells[3].Text = Convert.ToDateTime(e.Row.Cells[3].Text).ToString("dd-MM-yyyy");
+                e.Row.Cells[4].Text = Convert.ToDateTime(e.Row.Cells[4].Text).ToString("dd-MM-yyyy");
             }
         }
 

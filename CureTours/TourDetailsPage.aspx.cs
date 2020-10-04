@@ -15,10 +15,28 @@ namespace CureTours
     {
         string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         string tourTitle = "";
+        string tourID = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            tourTitle = Request.QueryString["TourTitle"];
+            tourID = Request.QueryString["ID"];
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("RETURN_TOUR", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@TOURID", tourID);
+                connection.Open();
+                try
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    tourTitle = dt.Rows[0][0].ToString();
+                }
+                catch { }
+            }
             TourTitleTag.Text = tourTitle;
+
             if (!Page.IsPostBack)
             {
                 interested_user_detail_box();
@@ -31,7 +49,7 @@ namespace CureTours
             {
                 SqlCommand cmd = new SqlCommand("SHOW_INTERESTED_DETAILS", connection);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TITLE", tourTitle);
+                cmd.Parameters.AddWithValue("@TOURID", tourID);
                 connection.Open();
                 try
                 {
@@ -55,38 +73,32 @@ namespace CureTours
                     Button lb = (Button)sender;
                     GridViewRow Row = (GridViewRow)lb.NamingContainer;
                     GridViewRow row = TourInterestedDetailsGrid.Rows[Row.RowIndex];
-                    string username = row.Cells[1].Text.ToString();
+                    string name = row.Cells[1].Text.ToString();
 
-                    SqlCommand cmd1 = new SqlCommand("REMOVE_INTERESTED_USER", connection);
-                    SqlCommand cmd2 = new SqlCommand("FINALIZED_USERS", connection);
-                    SqlCommand cmd3 = new SqlCommand("RETURN_REM_SEAT_COUNT", connection);
+                    
+                    SqlCommand cmd1 = new SqlCommand("RETURN_REM_SEAT_COUNT", connection);
+                    SqlCommand cmd2 = new SqlCommand("ACCEPT_USER", connection);
 
                     cmd1.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd2.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd3.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    cmd1.Parameters.AddWithValue("@TITLE", tourTitle);
-                    cmd1.Parameters.AddWithValue("@USERNAME", username);
+                    cmd1.Parameters.AddWithValue("@TOURID", tourID);
 
-                    cmd2.Parameters.AddWithValue("@TITLE", tourTitle);
-                    cmd2.Parameters.AddWithValue("@USERNAME", username);
+                    cmd2.Parameters.AddWithValue("@TOURID", tourID);
+                    cmd2.Parameters.AddWithValue("@NAME", name);
 
-                    cmd3.Parameters.AddWithValue("@TITLE", tourTitle);
 
                     connection.Open();
                     try
                     {
-                        int rem_count = Int32.Parse(cmd3.ExecuteScalar().ToString());
+                        int rem_count = Int32.Parse(cmd1.ExecuteScalar().ToString());
                         if (rem_count != 0)
                         {
-                            cmd1.ExecuteNonQuery();
                             cmd2.ExecuteNonQuery();
                             DetailsMessageLabel.Text = "User added to final list";
                         }
                         else
                             DetailsMessageLabel.Text = "No More Seats";
-
-
                     }
                     catch { }
                     Response.Redirect(Request.RawUrl, true);
@@ -104,12 +116,12 @@ namespace CureTours
                     Button lb = (Button)sender;
                     GridViewRow Row = (GridViewRow)lb.NamingContainer;
                     GridViewRow row = TourInterestedDetailsGrid.Rows[Row.RowIndex];
-                    string username = row.Cells[1].Text.ToString();
+                    string name = row.Cells[1].Text.ToString();
 
-                    SqlCommand cmd = new SqlCommand("REMOVE_INTERESTED_USER", connection);
+                    SqlCommand cmd = new SqlCommand("REJECT_USER", connection);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@TITLE", tourTitle);
-                    cmd.Parameters.AddWithValue("@USERNAME", username);
+                    cmd.Parameters.AddWithValue("@TOURID", tourID);
+                    cmd.Parameters.AddWithValue("@NAME", name);
                     connection.Open();
                     try
                     {
@@ -128,7 +140,7 @@ namespace CureTours
             {
                 SqlCommand cmd = new SqlCommand("SHOW_FINALIZED_USERS", connection);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TITLE", tourTitle);
+                cmd.Parameters.AddWithValue("@TOURID", tourID);
                 connection.Open();
                 try
                 {

@@ -9,7 +9,7 @@
     <title>User Portal</title>
 </head>
 <body>
-    <form id="form1"  runat="server">
+    <form id="form1" class="forms" runat="server">
         <div>
             <h1 class="Title">User Tour Portal</h1>
             <div class="userRoleTag">
@@ -31,7 +31,7 @@
             </p>
 
             <div class="infoGrid">
-                <asp:GridView ID="TourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="70%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
+                <asp:GridView ID="TourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="90%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />

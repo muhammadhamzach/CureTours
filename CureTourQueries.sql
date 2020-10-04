@@ -42,6 +42,7 @@ AS BEGIN
 	INSERT INTO tourlist VALUES (@TITLE, @FROMDATE, @TODATE, @DETAILS, @TOTALSEATS, @TOTALSEATS, @COST)
 END
 
+
 CREATE OR ALTER PROCEDURE USER_TOUR_SHOW
 AS BEGIN
 	SELECT Title, CONVERT(date, FromDate) AS FromDate, CONVERT(date,ToDate) As ToDate, PlanDetails, CostPerHead, RemainSeatCount from tourlist
@@ -71,12 +72,6 @@ AS BEGIN
 	SELECT user_role FROM logindetails WHERE username = @USERNAME
 END
 
-CREATE OR ALTER PROCEDURE RETURN_REM_SEAT_COUNT
-@TITLE VARCHAR(30)
-AS BEGIN
-	SELECT RemainSeatCount FROM tourlist WHERE Title=@TITLE
-END
-
 CREATE OR ALTER PROCEDURE ADMIN_TOUR_SHOW
 AS BEGIN
 	SELECT Title AS [Tour Title], CONVERT(date, FromDate) AS FromDate, CONVERT(date,ToDate) As ToDate, PlanDetails, CostPerHead, TotalSeatCount, RemainSeatCount from tourlist
@@ -86,6 +81,12 @@ CREATE OR ALTER PROCEDURE SHOW_INTERESTED_DETAILS
 @TITLE VARCHAR(30)
 AS BEGIN
 	SELECT username, Time FROM interested_list where Title=@TITLE
+END
+
+CREATE OR ALTER PROCEDURE RETURN_REM_SEAT_COUNT
+@TITLE VARCHAR(30)
+AS BEGIN
+	SELECT RemainSeatCount FROM tourlist WHERE Title=@TITLE
 END
 
 CREATE OR ALTER PROCEDURE REMOVE_INTERESTED_USER
@@ -100,11 +101,14 @@ AS BEGIN
 	INSERT INTO final_accepted_list VALUES (@USERNAME, @TITLE)
 	UPDATE tourlist SET RemainSeatCount=RemainSeatCount-1 WHERE Title=@TITLE
 END
+-----------------
+
 
 CREATE OR ALTER PROCEDURE SHOW_FINALIZED_USERS
 @TITLE VARCHAR(30)
 AS BEGIN
-	SELECT username from final_accepted_list WHERE Title=@TITLE
+	SELECT fullname as [Applicant Name] FROM usersEntry 
+	WHERE username = (SELECT username from final_accepted_list WHERE Title=@TITLE)
 END
 
 SELECT * FROM logindetails

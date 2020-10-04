@@ -51,13 +51,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.RequiredFieldValidator tourTitleValidator1;
 
         /// <summary>
-        /// DateToBox control.
+        /// DateFromBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DateToBox;
+        protected global::System.Web.UI.WebControls.TextBox DateFromBox;
 
         /// <summary>
         /// FromDateValidator control.
@@ -69,13 +69,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.CompareValidator FromDateValidator;
 
         /// <summary>
-        /// DateFromBox control.
+        /// DateToBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DateFromBox;
+        protected global::System.Web.UI.WebControls.TextBox DateToBox;
 
         /// <summary>
         /// ToDateValidator control.
