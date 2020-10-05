@@ -17,7 +17,7 @@ INSERT INTO logindetails VALUES ('admin', 'CureMD@123', 'admin')
 CREATE OR ALTER PROCEDURE LOGINVERIFY 
 @USERNAME varchar(20), @PASS varchar(20)
 AS BEGIN
-	SELECT UserRole  FROM logindetails 
+	SELECT UserID  FROM logindetails 
 	WHERE BINARY_CHECKSUM(Username) = BINARY_CHECKSUM(@USERNAME)
 		AND BINARY_CHECKSUM(UserPassword) = BINARY_CHECKSUM(@PASS)
 		AND username = @USERNAME
@@ -49,12 +49,12 @@ AS BEGIN
 END
 
 CREATE OR ALTER PROCEDURE RETURN_NAME_ROLE
-@USERNAME VARCHAR(30)
+@USERID INT
 AS BEGIN
-	SELECT usersEntry.UserID, usersEntry.FullName, logindetails.UserRole FROM usersEntry
+	SELECT usersEntry.FullName, logindetails.UserRole FROM usersEntry
 	FULL OUTER JOIN
-	logindetails ON usersEntry.UserID = logindetails.UserID
-	where usersEntry.Username = @USERNAME
+	logindetails ON usersEntry.Username = logindetails.Username
+	where usersEntry.UserID = @USERID
 END
 
 CREATE OR ALTER PROCEDURE INTERESTED_USER_LIST
@@ -131,4 +131,3 @@ SELECT * FROM tourlist
 SELECT * from interested_list
 SELECT * FROM final_accepted_list
 
-delete from final_accepted_list

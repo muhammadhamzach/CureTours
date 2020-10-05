@@ -14,14 +14,13 @@ namespace CureTours
     public partial class UserPortal : System.Web.UI.Page
     {
         string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-        string Username ="";
         string Name = "";
         string User_Role = "";
         string UserID = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Username = Request.QueryString["Username"];
+            UserID = Request.QueryString["ID"];
             if (!Page.IsPostBack)
             {
                 tour_detail_box();
@@ -30,16 +29,15 @@ namespace CureTours
             {
                 SqlCommand cmd = new SqlCommand("RETURN_NAME_ROLE", connection);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@USERNAME", Username);
+                cmd.Parameters.AddWithValue("@USERID", UserID);
                 connection.Open();
                 try
                 {
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    UserID = dt.Rows[0][0].ToString();
-                    Name = dt.Rows[0][1].ToString();
-                    User_Role = dt.Rows[0][2].ToString();
+                    Name = dt.Rows[0][0].ToString();
+                    User_Role = dt.Rows[0][1].ToString();
                 }
                 catch { }
             }
@@ -75,7 +73,7 @@ namespace CureTours
                 GridViewRow Row = (GridViewRow)lb.NamingContainer;
                 GridViewRow row = TourGrid.Rows[Row.RowIndex];
                 bool valid_date = dateComparator(Row.RowIndex);
-                int rem_seats = Int32.Parse(row.Cells[6].Text.ToString());
+                int rem_seats = Int32.Parse(row.Cells[7].Text.ToString());
                 if (rem_seats == 0)
                     TourInterestLabel.Text = "No Seat Remainings!";
                 else if (!valid_date)

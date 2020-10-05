@@ -94,14 +94,15 @@ namespace CureTours
                         int rem_count = Int32.Parse(cmd1.ExecuteScalar().ToString());
                         if (rem_count != 0)
                         {
+                            DetailsMessageLabel.Text = rem_count.ToString();
                             cmd2.ExecuteNonQuery();
-                            DetailsMessageLabel.Text = "User added to final list";
+                            Response.Redirect(Request.RawUrl, true);
                         }
                         else
                             DetailsMessageLabel.Text = "No More Seats";
                     }
                     catch { }
-                    Response.Redirect(Request.RawUrl, true);
+                   
                 }
             }
         }

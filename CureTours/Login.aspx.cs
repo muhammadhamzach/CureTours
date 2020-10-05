@@ -35,10 +35,10 @@ namespace CureTours
                     if (dt.Rows.Count > 0)
                     {
                         FormsAuthentication.RedirectFromLoginPage(Username.Text, false);
-                        if (dt.Rows[0][0].ToString().Equals("admin"))
-                            Response.Redirect("AdminPortal.aspx?Username=" + Username.Text);
-                        else if (dt.Rows[0][0].ToString().Equals("user"))
-                            Response.Redirect("UserPortal.aspx?Username=" + Username.Text);
+                        if (dt.Rows[0][0].ToString().Equals("0"))
+                            Response.Redirect("AdminPortal.aspx?ID=" + "0");
+                        else
+                            Response.Redirect("UserPortal.aspx?ID=" + dt.Rows[0][0].ToString());
                     }
                     else
                         LoginErrorLabel.Text = "Invalid Login Attempt, Try Again";
