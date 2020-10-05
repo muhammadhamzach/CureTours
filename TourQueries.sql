@@ -8,9 +8,7 @@ CREATE TABLE usersEntry (UserID INT PRIMARY KEY IDENTITY(1,1) ,Username varchar(
 
 CREATE TABLE tourlist(TourID INT PRIMARY KEY IDENTITY(1,1), Title varchar(30) NOT NULL, [From Date] date NOT NULL, [To Date] date NOT NULL, [Plan Details] varchar(300) NOT NULL, [Total Seats] INT NOT NULL, [Remaining Seats] INT NOT NULL, [Cost Per Head] INT NULL)
 
-CREATE TABLE interested_list (InterestID INT PRIMARY KEY IDENTITY(1,1), UserID INT NOT NULL, TourID INT , Time datetime)
-
-CREATE TABLE final_accepted_list (FinalID INT PRIMARY KEY IDENTITY(1,1), UserID INT NOT NULL, TourID INT)
+CREATE TABLE interested_list (InterestID INT PRIMARY KEY IDENTITY(1,1), UserID INT NOT NULL, TourID INT , Time datetime, [User Status] VARCHAR(10))
 
 INSERT INTO logindetails VALUES ('admin', 'CureMD@123', 'admin')
 
@@ -75,17 +73,18 @@ AS BEGIN
 	IF NOT EXISTS (SELECT InterestID FROM interested_list 
 					WHERE TourID=@TOURID AND  UserID = @USERID)
 	BEGIN
-		IF NOT EXISTS (SELECT FinalID FROM final_accepted_list 
-							WHERE TourID=@TOURID AND  UserID = @USERID)
-		BEGIN
-			INSERT INTO interested_list VALUES (@USERID, @TOURID, @TIME)
-		END
+		INSERT INTO interested_list VALUES (@USERID, @TOURID, @TIME, 'Pending')
 	END
 END
 
 CREATE OR ALTER PROCEDURE ADMIN_TOUR_SHOW
 AS BEGIN
 	SELECT TourID AS [No], Title AS [Tour Title], CONVERT(date, [From Date]) AS [From Date], CONVERT(date,[To Date]) As [To Date], [Plan Details], [Cost Per Head] AS [Cost/Head], [Total Seats], [Remaining Seats] AS [Seat Remaining] from tourlist
+END
+
+CREATE OR ALTER PROCEDURE USERS_SHOW
+AS BEGIN
+	SELECT Username, FullName as [Full Name], TeamName AS [Team Name], Phone, Email, UserDescription AS [User Description] from usersEntry
 END
 
 CREATE OR ALTER PROCEDURE RETURN_TOUR
@@ -100,7 +99,7 @@ AS BEGIN
 	SELECT usersEntry.FullName AS [Name], interested_list.[Time] FROM usersEntry
 	FULL OUTER JOIN 
 	interested_list On usersEntry.UserID = interested_list.UserID
-	WHERE interested_list.TourID = @TOURID
+	WHERE interested_list.TourID = @TOURID AND interested_list.[User Status] = 'Pending'
 	ORDER BY interested_list.[Time]
 END
 
@@ -113,10 +112,8 @@ END
 CREATE OR ALTER PROCEDURE ACCEPT_USER
 @TOURID INT, @NAME VARCHAR(30)
 AS BEGIN
-	DELETE FROM interested_list 
+	UPDATE interested_list SET [User Status] = 'Accept'
 		WHERE TourID=@TOURID AND UserID = (SELECT UserID FROM usersEntry WHERE FullName = @NAME)
-	INSERT INTO final_accepted_list 
-		VALUES ((SELECT UserID FROM usersEntry WHERE FullName = @NAME), @TOURID)
 	UPDATE tourlist SET [Remaining Seats]=[Remaining Seats]-1 
 		WHERE TourID = @TOURID
 END
@@ -124,7 +121,7 @@ END
 CREATE OR ALTER PROCEDURE REJECT_USER
 @TOURID INT, @NAME VARCHAR(30)
 AS BEGIN
-	DELETE FROM interested_list 
+	UPDATE interested_list SET [User Status] = 'Reject'
 		WHERE TourID=@TOURID AND UserID = (SELECT UserID FROM usersEntry WHERE FullName = @NAME)
 END
 
@@ -132,9 +129,9 @@ CREATE OR ALTER PROCEDURE SHOW_FINALIZED_USERS
 @TOURID INT
 AS BEGIN
 	SELECT usersEntry.FullName AS [Accepted Name] FROM usersEntry
-	FULL OUTER JOIN final_accepted_list 
-	ON usersEntry.UserID = final_accepted_list.UserID
-	WHERE final_accepted_list.TourID=@TOURID
+	FULL OUTER JOIN interested_list
+	ON usersEntry.UserID = interested_list.UserID
+	WHERE interested_list.TourID=@TOURID AND interested_list.[User Status] = 'Accept'
 END
 
 SELECT * FROM logindetails
@@ -143,4 +140,4 @@ SELECT * FROM tourlist
 SELECT * from interested_list
 SELECT * FROM final_accepted_list
 
-delete from tourlist where TourID=10
+delete from interested_list where 

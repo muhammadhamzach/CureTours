@@ -74,7 +74,7 @@ namespace CureTours
 
         protected void ReturnButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminPortal.aspx");
+            Response.Redirect("TourDetailsPage.aspx?ID=" + tourID);
         }
     }
 }

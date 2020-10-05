@@ -78,6 +78,24 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.GridView TourGrid;
 
         /// <summary>
+        /// showUsers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button showUsers;
+
+        /// <summary>
+        /// usersGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView usersGrid;
+
+        /// <summary>
         /// LogOutButton control.
         /// </summary>
         /// <remarks>

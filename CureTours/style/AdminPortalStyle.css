@@ -58,16 +58,23 @@ body {
     padding: 0 10px;
 }
 
-.logOut{
-    padding-top:8%;
+.infoGrid {
+    padding-bottom: 6%;
 }
 
-#TourGrid td {
+.showUsers{
+    padding-bottom:2%
+}
+
+#TourGrid td, #usersGrid td {
     padding: 8px 10px;
 }
 
-#TourGrid th {
-    
+#TourGrid th, #TourGrid th {
     padding: 8px 25px;
 }
 
+.userGrid{
+    padding-top:2%;
+    padding-left:20%;
+}

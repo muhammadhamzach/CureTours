@@ -73,5 +73,23 @@ namespace CureTours
         {
             Response.Redirect("Login.aspx");
         }
+        protected void showUsers_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("USERS_SHOW", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                connection.Open();
+                try
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        usersGrid.DataSource = reader;
+                        usersGrid.DataBind();
+                    }
+                }
+                catch { }
+            }
+        }
     }
 }
