@@ -2,11 +2,11 @@ CREATE DATABASE Tours
 
 USE Tours
 
-CREATE TABLE logindetails (UserID INT PRIMARY KEY IDENTITY(0,1), Username varchar(20) NOT NULL UNIQUE, UserPassword varchar(20) NOT NULL, UserRole varchar (5) NOT NULL);
+CREATE TABLE logindetails (UserID INT PRIMARY KEY IDENTITY(0,1), Username VARCHAR(20) NOT NULL UNIQUE, UserPassword VARCHAR(20) NOT NULL, UserRole VARCHAR(5) NOT NULL);
 
-CREATE TABLE usersEntry (UserID INT PRIMARY KEY IDENTITY(1,1) ,Username varchar(20) NOT NULL, FullName varchar(20) NOT NULL, TeamName varchar(20) NOT NULL, Phone varchar(20) NOT NULL, Email varchar(30) NOT NULL, UserDescription varchar(200))
+CREATE TABLE usersEntry (UserID INT PRIMARY KEY IDENTITY(1,1) ,Username VARCHAR(20) NOT NULL, FullName VARCHAR(20) NOT NULL, TeamName VARCHAR(20) NOT NULL, Phone VARCHAR(20) NOT NULL, Email VARCHAR(30) NOT NULL, UserDescription VARCHAR(200))
 
-CREATE TABLE tourlist(TourID INT PRIMARY KEY IDENTITY(1,1), Title varchar(30) NOT NULL, [From Date] date NOT NULL, [To Date] date NOT NULL, [Plan Details] varchar(300) NOT NULL, [Total Seats] INT NOT NULL, [Remaining Seats] INT NOT NULL, [Cost Per Head] INT NULL)
+CREATE TABLE tourlist(TourID INT PRIMARY KEY IDENTITY(1,1), Title VARCHAR(30) NOT NULL, [From Date] DATE NOT NULL, [To Date] DATE NOT NULL, [Plan Details] VARCHAR(300) NOT NULL, [Total Seats] INT NOT NULL, [Remaining Seats] INT NOT NULL, [Cost Per Head] INT NOT NULL)
 
 CREATE TABLE interested_list (InterestID INT PRIMARY KEY IDENTITY(1,1), UserID INT NOT NULL, TourID INT , Time datetime, [User Status] VARCHAR(10))
 
@@ -137,7 +137,4 @@ END
 SELECT * FROM logindetails
 SELECT * FROM usersEntry
 SELECT * FROM tourlist
-SELECT * from interested_list
-SELECT * FROM final_accepted_list
-
-delete from interested_list where 
+SELECT * FROM interested_list
