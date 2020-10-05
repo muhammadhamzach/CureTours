@@ -16,7 +16,7 @@
         </div>
         <div class="tourForm">
             <p class="text">Title*
-                <asp:TextBox ID="TourTitle" runat="server" style="margin-left: 130px" placeholder="Tour Name" Height="30px" Width="400px" Font-Size="13pt"></asp:TextBox>
+                <asp:TextBox ID="TourTitle" runat="server" style="margin-left: 130px" placeholder="Tour Name" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="tourTitleValidator" 
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Tour Name"
@@ -30,7 +30,7 @@
             </p>
 
             <p class="text">Departure Date*
-                <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="400px" Font-Size="13pt"></asp:TextBox>
+                <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:CompareValidator ID="FromDateValidator" 
                         runat="server"
                         ControlToValidate="DateFromBox" ErrorMessage="Invalid Date Format"
@@ -40,16 +40,16 @@
 
             <p class="text">
                 Return Date*
-                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="400px" Font-Size="13pt"></asp:TextBox>
+                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:CompareValidator ID="ToDateValidator" 
                         runat="server"
                         ControlToValidate="DateToBox" ErrorMessage="Invalid Date Format"
                         Operator="DataTypeCheck" Type="Date" ForeColor="Red">
-                </asp:CompareValidator>
+                    </asp:CompareValidator>
             </p>
 
             <p class="text">Plan*
-                <asp:TextBox ID="PlanBox" runat="server" style="margin-left: 131px" TextMode="MultiLine" placeholder ="Enter your plan details here!" Height="190px" Width="400px" Font-Size="13pt"></asp:TextBox>
+                <asp:TextBox ID="PlanBox" runat="server" style="margin-left: 131px" TextMode="MultiLine" placeholder ="Enter your plan details here!" Height="190px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="PlanBoxValidator"
                     runat="server" 
                     ControlToValidate="PlanBox" 
@@ -58,7 +58,7 @@
             </p>
 
             <p class="text">No of Seats*
-                <asp:TextBox ID="SeatCountBox" runat="server" style="margin-left: 73px" placeholder ="Enter total seat count." Height="30px" Width="400px" Font-Size="13pt"></asp:TextBox>
+                <asp:TextBox ID="SeatCountBox" runat="server" style="margin-left: 73px" placeholder ="Enter total seat count." Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:RangeValidator ID="seatCountValidator" 
                     runat="server" 
                     ErrorMessage="Invalid Number" 
@@ -73,7 +73,7 @@
             </p>
 
             <p class="text">Cost Per Head (Rs)*
-                <asp:TextBox ID="CostBox" runat="server" style="margin-left: 12px" Height="30px" Width="400px" Font-Size="13pt" placeholder ="Enter cost per head"></asp:TextBox>
+                <asp:TextBox ID="CostBox" runat="server" style="margin-left: 12px" Height="30px" Width="400px" Font-Size="13pt" placeholder ="Enter cost per head" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:RangeValidator ID="costValidator" 
                     runat="server" 
                     ErrorMessage="Invalid Number" 

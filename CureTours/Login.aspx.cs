@@ -36,18 +36,12 @@ namespace CureTours
                     {
                         FormsAuthentication.RedirectFromLoginPage(Username.Text, false);
                         if (dt.Rows[0][0].ToString().Equals("admin"))
-                        {
                             Response.Redirect("AdminPortal.aspx?Username=" + Username.Text);
-                        }
                         else if (dt.Rows[0][0].ToString().Equals("user"))
-                        {
                             Response.Redirect("UserPortal.aspx?Username=" + Username.Text);
-                        }
                     }
                     else
-                    {
                         LoginErrorLabel.Text = "Invalid Login Attempt, Try Again";
-                    }
                 }
                 catch { }
             }
