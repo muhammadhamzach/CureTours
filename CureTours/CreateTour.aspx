@@ -88,6 +88,9 @@
             </p>
 
             <p class="saveButton"><asp:Button ID="TourSaveButton" runat="server" Text="Save" Width= "576px" Height="40px" OnClick="TourSaveButton_Click" /></p>
+            <p class="saveButton">
+                <asp:Label ID="TourMessage" runat="server" ForeColor="Red"></asp:Label>
+            </p>
         </div>
 
         <p class="returnButton">

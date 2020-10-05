@@ -23,11 +23,11 @@
                 <p class ="text">Password</p>
                 <p ><asp:TextBox ID="Password" runat="server" Width="45%" Height="30px" TextMode="Password" Font-Size="16px" AutoCompleteType="Disabled"></asp:TextBox></p>
 
-                <p class="Logbox"><asp:Button ID="LogInButton" runat="server" Text="LogIn" Width="45%" Height="30px" OnClick="LogInButton_Click" /></p>
+                <p class="Logbox"><asp:Button ID="LogInButton" runat="server" Text="Log In" Width="45%" Height="30px" OnClick="LogInButton_Click" /></p>
                 <p class="errorlabel"><asp:Label ID="LoginErrorLabel" runat="server" ForeColor="Red"></asp:Label></p>
 
                 <p class="signup">Dont have an account?</p>
-                <p><asp:Button ID="SignUpButton" runat="server" Text="SignUp" Width="45%" Height="30px" OnClick="SignUpButton_Click" /></p>
+                <p><asp:Button ID="SignUpButton" runat="server" Text="Sign Up" Width="45%" Height="30px" OnClick="SignUpButton_Click" /></p>
             </div>
             
         </form>

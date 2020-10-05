@@ -41,6 +41,11 @@ body {
     
 }
 
+.editbutton {
+    padding-bottom: 1%;
+}
+
+
 #FinalizedUserViewer td, #TourInterestedDetailsGrid td {
     padding: 8px 10px;
 }

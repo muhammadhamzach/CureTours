@@ -43,6 +43,18 @@ AS BEGIN
 	INSERT INTO tourlist VALUES (@TITLE, @FROMDATE, @TODATE, @DETAILS, @TOTALSEATS, @TOTALSEATS, @COST)
 END
 
+CREATE OR ALTER PROCEDURE SHOW_SPECIFIC_TOUR
+@TOURID INT
+AS BEGIN
+	SELECT Title, [From Date], [To Date], [Plan Details], [Total Seats], [Remaining Seats], [Cost Per Head] FROM tourlist WHERE TourID=@TOURID
+END
+
+CREATE OR ALTER PROCEDURE EDIT_TOUR
+@TOURID INT, @TITLE VARCHAR(30), @FROMDATE DATE, @TODATE DATE, @DETAILS VARCHAR(300), @TOTALSEATS INT, @COST INT
+AS BEGIN
+	UPDATE tourlist SET Title=@TITLE, [From Date] = @FROMDATE, [To Date]=@TODATE, [Plan Details]=@DETAILS, [Total Seats]=@TOTALSEATS, [Cost Per Head]=@COST WHERE TourID=@TOURID
+END
+
 CREATE OR ALTER PROCEDURE USER_TOUR_SHOW
 AS BEGIN
 	SELECT TourID AS [No] ,Title, CONVERT(date, [From Date]) AS [From], CONVERT(date,[To Date]) As [To], [Plan Details], [Cost Per Head] AS [Cost/Head], [Remaining Seats] AS [Seats Remain] from tourlist
@@ -131,3 +143,4 @@ SELECT * FROM tourlist
 SELECT * from interested_list
 SELECT * FROM final_accepted_list
 
+delete from tourlist where TourID=10

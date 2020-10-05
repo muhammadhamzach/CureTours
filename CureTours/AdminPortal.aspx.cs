@@ -26,7 +26,7 @@ namespace CureTours
 
         protected void NewTourCreationButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateTour.aspx");
+            Response.Redirect("CreateTour.aspx?ID=new");
         }
 
         protected void tour_detail_box()

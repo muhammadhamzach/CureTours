@@ -159,5 +159,10 @@ namespace CureTours
         {
             Response.Redirect("AdminPortal.aspx");
         }
+
+        protected void EditTableButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateTour.aspx?ID=" + tourID);
+        }
     }
 }

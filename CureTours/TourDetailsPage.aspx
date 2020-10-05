@@ -20,6 +20,9 @@
         
 
         <div class="approved">
+            <p class="editbutton">
+                <asp:Button ID="EditTableButton" runat="server" Text="Edit Tour Details" Height="25px" Width="170px" OnClick="EditTableButton_Click" />
+            </p>
             <p class="approvedListButton">
                 <asp:Button ID="FinalListViewer" runat="server" OnClick="FinalListViewer_Click" Text="Show Accepted Users" Height="25px" Width="170px" />
             </p>
