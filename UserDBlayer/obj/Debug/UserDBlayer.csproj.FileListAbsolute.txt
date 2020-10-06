@@ -1,0 +1,5 @@
+C:\Users\Mohammad.Hamza\Downloads\CureTours\UserDBlayer\bin\Debug\UserDBlayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\UserDBlayer\bin\Debug\UserDBlayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\UserDBlayer\obj\Debug\UserDBlayer.csprojAssemblyReference.cache
+C:\Users\Mohammad.Hamza\Downloads\CureTours\UserDBlayer\obj\Debug\UserDBlayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\UserDBlayer\obj\Debug\UserDBlayer.pdb

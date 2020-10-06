@@ -1,0 +1,5 @@
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroDBLayer\bin\Debug\IntroDBLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroDBLayer\bin\Debug\IntroDBLayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroDBLayer\obj\Debug\IntroDBLayer.csprojAssemblyReference.cache
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroDBLayer\obj\Debug\IntroDBLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroDBLayer\obj\Debug\IntroDBLayer.pdb

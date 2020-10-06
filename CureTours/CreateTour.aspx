@@ -94,7 +94,7 @@
         </div>
 
         <p class="returnButton">
-            <asp:Button ID="ReturnButton" runat="server" CausesValidation="False" OnClick="ReturnButton_Click" Text="Return To Tour Details" Height="25px" Width="170px" />
+            <asp:Button ID="ReturnButton" runat="server" CausesValidation="False" OnClick="ReturnButton_Click" Text="Return to Admin Portal" Height="25px" Width="170px" />
         </p>
 
     </form>

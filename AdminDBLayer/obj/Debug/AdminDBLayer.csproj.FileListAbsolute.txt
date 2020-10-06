@@ -1,0 +1,5 @@
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminDBLayer\bin\Debug\AdminDBLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminDBLayer\bin\Debug\AdminDBLayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminDBLayer\obj\Debug\AdminDBLayer.csprojAssemblyReference.cache
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminDBLayer\obj\Debug\AdminDBLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminDBLayer\obj\Debug\AdminDBLayer.pdb

@@ -1,0 +1,8 @@
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\bin\Debug\IntroBSLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\bin\Debug\IntroBSLayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\bin\Debug\IntroDBLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\bin\Debug\IntroDBLayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\obj\Debug\IntroBSLayer.csprojAssemblyReference.cache
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\obj\Debug\IntroBSLayer.csproj.CopyComplete
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\obj\Debug\IntroBSLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\IntroBSLayer\obj\Debug\IntroBSLayer.pdb

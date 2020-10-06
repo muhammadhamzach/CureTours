@@ -137,7 +137,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AdminBSLayer\AdminBSLayer.csproj">
+      <Project>{62234725-20c3-4c79-bb2c-7b9dbc8a5430}</Project>
+      <Name>AdminBSLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntroBSLayer\IntroBSLayer.csproj">
+      <Project>{09fbb2da-a96c-4b13-b0f2-5b8a739544d2}</Project>
+      <Name>IntroBSLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserBSLayer\UserBSLayer.csproj">
+      <Project>{2122258c-625c-4928-9c4d-d6b78ee7c605}</Project>
+      <Name>UserBSLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

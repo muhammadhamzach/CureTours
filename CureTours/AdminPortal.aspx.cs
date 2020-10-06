@@ -1,27 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Configuration;
 using System.Data;
-using System.Web.Security;
+using AdminBSLayer;
 
 namespace CureTours
 {
     public partial class AdminPortal : System.Web.UI.Page
     {
-        string TourID = "";
-        string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+        AdminBS admin = new AdminBS();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
-            {
                 tour_detail_box();
-            }
         }
 
         protected void NewTourCreationButton_Click(object sender, EventArgs e)
@@ -31,21 +23,9 @@ namespace CureTours
 
         protected void tour_detail_box()
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                SqlCommand cmd = new SqlCommand("ADMIN_TOUR_SHOW", connection);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                connection.Open();
-                try
-                {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        TourGrid.DataSource = reader;
-                        TourGrid.DataBind();
-                    }
-                }
-                catch { }
-            }
+            object reader = admin.tour_detail_BS();
+            TourGrid.DataSource = reader as DataSet;
+            TourGrid.DataBind();
         }
 
         protected void TourGrid_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -64,8 +44,7 @@ namespace CureTours
                 Button lb = (Button)sender;
                 GridViewRow Row = (GridViewRow)lb.NamingContainer;
                 GridViewRow row = TourGrid.Rows[Row.RowIndex];
-                string ID = row.Cells[1].Text.ToString();
-                Response.Redirect("TourDetailsPage.aspx?ID=" + ID);
+                Response.Redirect("TourDetailsPage.aspx?ID=" + row.Cells[1].Text.ToString());
             }
         }
 
@@ -73,23 +52,12 @@ namespace CureTours
         {
             Response.Redirect("Login.aspx");
         }
+
         protected void showUsers_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                SqlCommand cmd = new SqlCommand("USERS_SHOW", connection);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                connection.Open();
-                try
-                {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        usersGrid.DataSource = reader;
-                        usersGrid.DataBind();
-                    }
-                }
-                catch { }
-            }
+            object reader = admin.show_users_BS();
+            usersGrid.DataSource = reader as DataSet;
+            usersGrid.DataBind();
         }
     }
 }

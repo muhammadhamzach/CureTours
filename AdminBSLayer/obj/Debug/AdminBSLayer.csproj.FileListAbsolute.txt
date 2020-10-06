@@ -1,0 +1,8 @@
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\bin\Debug\AdminBSLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\bin\Debug\AdminBSLayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\bin\Debug\AdminDBLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\bin\Debug\AdminDBLayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\obj\Debug\AdminBSLayer.csprojAssemblyReference.cache
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\obj\Debug\AdminBSLayer.csproj.CopyComplete
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\obj\Debug\AdminBSLayer.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\AdminBSLayer\obj\Debug\AdminBSLayer.pdb
