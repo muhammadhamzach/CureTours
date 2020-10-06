@@ -31,7 +31,7 @@
             
             <div class="infoGrid">
                 <asp:GridView ID="TourGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" 
-                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="85%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
+                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="87%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
                     <EditRowStyle HorizontalAlign="Center" />
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -45,8 +45,15 @@
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <p class="detailsButton"><asp:Button ID="InterestedButton" Text="Details" runat="server" OnClick="DetailsButton_Click" Height="20px" Width="120px" /> </p>
+                            <p class="detailsButton"><asp:Button ID="InterestedButton" Text="Details" runat="server" OnClick="DetailsButton_Click" Height="20px" Width="70px" Font-Size="12px" /> </p>
                         </ItemTemplate>
+
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <p class="deleteButton"><asp:Button ID="DeleteButton" Text="Delete" runat="server" OnClick="DeleteButton_Click" Height="20px" Width="70px" ForeColor="Red" Font-Size="12px"/> </p>
+                        </ItemTemplate>
+
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>

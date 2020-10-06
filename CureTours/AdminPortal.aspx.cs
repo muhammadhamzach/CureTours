@@ -32,8 +32,8 @@ namespace CureTours
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Cells[3].Text = Convert.ToDateTime(e.Row.Cells[3].Text).ToString("dd-MM-yyyy");
                 e.Row.Cells[4].Text = Convert.ToDateTime(e.Row.Cells[4].Text).ToString("dd-MM-yyyy");
+                e.Row.Cells[5].Text = Convert.ToDateTime(e.Row.Cells[5].Text).ToString("dd-MM-yyyy");
             }
         }
 
@@ -44,7 +44,7 @@ namespace CureTours
                 Button lb = (Button)sender;
                 GridViewRow Row = (GridViewRow)lb.NamingContainer;
                 GridViewRow row = TourGrid.Rows[Row.RowIndex];
-                Response.Redirect("TourDetailsPage.aspx?ID=" + row.Cells[1].Text.ToString());
+                Response.Redirect("TourDetailsPage.aspx?ID=" + row.Cells[2].Text.ToString());
             }
         }
 
@@ -59,5 +59,11 @@ namespace CureTours
             usersGrid.DataSource = reader as DataSet;
             usersGrid.DataBind();
         }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

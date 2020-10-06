@@ -49,13 +49,9 @@ body {
 
 
 .newTour {
-    padding-left:74%;
+    padding-left:77%;
     padding-bottom:1%;
     padding-top:1%;
-}
-
-.detailsButton{
-    padding: 0 10px;
 }
 
 .infoGrid {
@@ -70,7 +66,7 @@ body {
     padding: 8px 10px;
 }
 
-#TourGrid th, #TourGrid th {
+#TourGrid th, #usersGrid th {
     padding: 8px 25px;
 }
 
