@@ -16,6 +16,7 @@ namespace CureTours
         {
             tourID = Request.QueryString["ID"];
 
+            //retrieving title of tour for use later
             object obj = admin.show_specific_tour_BS(tourID);
             DataTable dt = obj as DataTable;
             tourTitle = dt.Rows[0][0].ToString();
@@ -23,16 +24,16 @@ namespace CureTours
 
             if (!Page.IsPostBack)
                 interested_user_detail_box();
-        }
+        }   
 
-        protected void interested_user_detail_box()
+        protected void interested_user_detail_box()     //listing all the users which are interested in specfic tour
         {
             object reader = admin.interested_user_list_BS(tourID);
             TourInterestedDetailsGrid.DataSource = reader as DataSet;
             TourInterestedDetailsGrid.DataBind();
         }
 
-        protected void AcceptButton_Click(object sender, EventArgs e)
+        protected void AcceptButton_Click(object sender, EventArgs e)   //accepting user request against a particular tour 
         {
             if ((sender as Button).Text == "Accept")
             {
@@ -49,7 +50,7 @@ namespace CureTours
             }
         }
 
-        protected void RejectButton_Click(object sender, EventArgs e)
+        protected void RejectButton_Click(object sender, EventArgs e)   //rejecting user request against a particular tour
         {
             if ((sender as Button).Text == "Reject")
             {
@@ -64,19 +65,19 @@ namespace CureTours
             }
         }
 
-        protected void FinalListViewer_Click(object sender, EventArgs e)
+        protected void FinalListViewer_Click(object sender, EventArgs e)    //listing sll the users that are accepted for a particular tour
         {
             object reader = admin.finalizedUsers_BS(tourID);
             FinalizedUserViewer.DataSource = reader as DataSet;
             FinalizedUserViewer.DataBind();
         }
 
-        protected void ReturnButton_Click(object sender, EventArgs e)
+        protected void ReturnButton_Click(object sender, EventArgs e)   //return redirect to admin portal
         {
             Response.Redirect("AdminPortal.aspx");
         }
 
-        protected void EditTableButton_Click(object sender, EventArgs e)
+        protected void EditTableButton_Click(object sender, EventArgs e)    //for tour edit purposes
         {
             Response.Redirect("CreateTour.aspx?ID=" + tourID);
         }

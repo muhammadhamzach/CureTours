@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="style/TourDetailsPageStyle.css" rel="stylesheet" />
+    <link href="style/TourDetailsPageStyle.css" rel="stylesheet" type="text/css"/>
     <title>Tour Details (admin)</title>
 </head>
 <body>

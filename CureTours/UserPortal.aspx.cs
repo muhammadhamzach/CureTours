@@ -16,11 +16,13 @@ namespace CureTours
         protected void Page_Load(object sender, EventArgs e)
         {
             UserID = Request.QueryString["ID"];
+
             if (!Page.IsPostBack)
             {
                 tour_detail_box();
             }
 
+            //name and user role corresponding to a userID
             object obj = user.returnRole_BS(UserID);
             DataTable dt = obj as DataTable;
             Name = dt.Rows[0][0].ToString();
@@ -30,14 +32,14 @@ namespace CureTours
 
         }
 
-        protected void tour_detail_box()
+        protected void tour_detail_box()    //listing all the tours for user view
         {
             object reader = user.tourList_BS();
             TourGrid.DataSource = reader as DataSet;
             TourGrid.DataBind();
         }
 
-        protected void InterestedButton_Click(object sender, EventArgs e)
+        protected void InterestedButton_Click(object sender, EventArgs e)   //if user shows interest against a specfied tour
         {
             if ((sender as Button).Text == "Interested")
             {
@@ -59,7 +61,7 @@ namespace CureTours
             }
         }
 
-        protected void TourGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void TourGrid_RowDataBound(object sender, GridViewRowEventArgs e)     //modifying datetime string to date
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -68,7 +70,7 @@ namespace CureTours
             }
         }
 
-        protected void LogOutButton_Click(object sender, EventArgs e)
+        protected void LogOutButton_Click(object sender, EventArgs e)       //redirecting to login page
         {
             Response.Redirect("Login.aspx");
         }

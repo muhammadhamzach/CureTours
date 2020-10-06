@@ -13,8 +13,8 @@ namespace CureTours
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            tourID = Request.QueryString["ID"];
-            if (!Page.IsPostBack)
+            tourID = Request.QueryString["ID"];     //for retrieving the tourID from URL
+            if (!Page.IsPostBack)   //if tour is in edit mode, this will put all the details oin the box
             {
                 object obj = admin.show_specific_user_BS(tourID);
                 DataTable dt = obj as DataTable;
@@ -30,7 +30,7 @@ namespace CureTours
             }
         }
 
-        protected void TourSaveButton_Click(object sender, EventArgs e)
+        protected void TourSaveButton_Click(object sender, EventArgs e)     //when tour save button is pressed after saved creation/edit
         {
             admin.tourSave_BS(tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
             if (!tourID.All(Char.IsDigit))
@@ -38,7 +38,7 @@ namespace CureTours
             TourMessage.Text = "Tour Details Modified";
         }
 
-        protected void ReturnButton_Click(object sender, EventArgs e)
+        protected void ReturnButton_Click(object sender, EventArgs e)       //redirecting back to admin portal
         {
             Response.Redirect("AdminPortal.aspx?ID=" + tourID);
         }

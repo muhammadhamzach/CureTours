@@ -10,10 +10,9 @@ namespace CureTours
         IntroBS intro = new IntroBS();
 
         protected void Page_Load(object sender, EventArgs e)
-        {
-        }
+        { }
 
-        protected void LogInButton_Click(object sender, EventArgs e)
+        protected void LogInButton_Click(object sender, EventArgs e)    //login verification and redirects
         {
             object ob = intro.LogInButton_Business(Username.Text, Password.Text);
 
@@ -30,7 +29,7 @@ namespace CureTours
                 LoginErrorLabel.Text = "Invalid Login Attempt, Try Again";
         }
 
-        protected void SignUpButton_Click(object sender, EventArgs e)
+        protected void SignUpButton_Click(object sender, EventArgs e)   //redirect to sign up page
         {
             Response.Redirect("SignUp.aspx");
         }
