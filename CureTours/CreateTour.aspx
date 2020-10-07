@@ -32,8 +32,9 @@
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </p>
 
-            <p class="text">Departure Date*
-                <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+            <div class="text">Departure Date*
+                <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="360px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:Button ID="CalenderFrom" runat="server" Text="C" Width="38px" Height="34px" CausesValidation="False" OnClick="CalenderFrom_Click"/>
                 <asp:CompareValidator ID="FromDateValidator" 
                         runat="server"
                         ControlToValidate="DateFromBox" ErrorMessage="Invalid Date Format"
@@ -43,11 +44,25 @@
                     ErrorMessage="Date can't be blank"
                     ControlToValidate="DateFromBox" 
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-            </p>
+                <div class="calender">
+                    <asp:Calendar ID="CalendarFromDate" runat="server" Visible="False"  BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="170px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="360px" OnSelectionChanged="CalendarFromDate_SelectionChanged">
+                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
+                        <DayStyle Width="14%" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
+                        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
+                        <TodayDayStyle BackColor="#CCCC99" />
+                    </asp:Calendar>
+                </div>
+                
+            </div>
 
-            <p class="text">
+            <div class="text">
                 Return Date*
-                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="360px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:Button ID="CalenderTo" runat="server" Text="C" Width="38px" Height="34px" CausesValidation="False" OnClick="CalenderTo_Click"/>
                 <asp:CompareValidator ID="ToDateValidator" 
                         runat="server"
                         ControlToValidate="DateToBox" ErrorMessage="Invalid Date Format"
@@ -57,7 +72,19 @@
                     ErrorMessage="Date can't be blank"
                     ControlToValidate="DateToBox" 
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-            </p>
+                <div class="calender">
+                    <asp:Calendar ID="CalendarToDate" runat="server" Visible="False" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="170px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="360px" OnSelectionChanged="CalendarToDate_SelectionChanged">
+                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
+                        <DayStyle Width="14%" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
+                        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
+                        <TodayDayStyle BackColor="#CCCC99" />
+                    </asp:Calendar>
+                </div>
+            </div>
 
             <p class="text">Plan*
                 <asp:TextBox ID="PlanBox" runat="server" style="margin-left: 131px" TextMode="MultiLine" placeholder ="Enter your plan details here!" Height="190px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>

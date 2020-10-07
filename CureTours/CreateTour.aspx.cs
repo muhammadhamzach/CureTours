@@ -8,7 +8,7 @@ namespace CureTours
 {
     public partial class CreateTour : System.Web.UI.Page
     {
-        string tourID ="";
+        string tourID ="new";
         AdminBS admin = new AdminBS();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -41,6 +41,32 @@ namespace CureTours
         protected void ReturnButton_Click(object sender, EventArgs e)       //redirecting back to admin portal
         {
             Response.Redirect("AdminPortal.aspx?ID=" + tourID);
+        }
+
+        protected void CalenderFrom_Click(object sender, EventArgs e)
+        {
+            if (CalendarFromDate.Visible == false)
+                CalendarFromDate.Visible = true;
+            else
+                CalendarFromDate.Visible = false;
+        }
+
+        protected void CalenderTo_Click(object sender, EventArgs e)
+        {
+            if (CalendarToDate.Visible == false)
+                CalendarToDate.Visible = true;
+            else
+                CalendarToDate.Visible = false;
+        }
+
+        protected void CalendarFromDate_SelectionChanged(object sender, EventArgs e)
+        {
+            DateFromBox.Text = CalendarFromDate.SelectedDate.ToString("dd-MM-yyyy");
+        }
+
+        protected void CalendarToDate_SelectionChanged(object sender, EventArgs e)
+        {
+            DateToBox.Text = CalendarToDate.SelectedDate.ToString("dd-MM-yyyy");
         }
     }
 }

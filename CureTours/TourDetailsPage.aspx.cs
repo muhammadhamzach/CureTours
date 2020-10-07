@@ -15,12 +15,15 @@ namespace CureTours
         protected void Page_Load(object sender, EventArgs e)
         {
             tourID = Request.QueryString["ID"];
-
-            //retrieving title of tour for use later
-            object obj = admin.show_specific_tour_BS(tourID);
-            DataTable dt = obj as DataTable;
-            tourTitle = dt.Rows[0][0].ToString();
-            TourTitleTag.Text = tourTitle;
+            try
+            {
+                //retrieving title of tour for use later
+                object obj = admin.show_specific_tour_BS(tourID);
+                DataTable dt = obj as DataTable;
+                tourTitle = dt.Rows[0][0].ToString();
+                TourTitleTag.Text = tourTitle;
+            }
+            catch { Response.Redirect("Login.aspx");  }
 
             if (!Page.IsPostBack)
                 interested_user_detail_box();

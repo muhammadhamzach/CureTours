@@ -6,3 +6,12 @@ C:\Users\Mohammad.Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.cs
 C:\Users\Mohammad.Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.csproj.CopyComplete
 C:\Users\Mohammad.Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.dll
 C:\Users\Mohammad.Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.pdb
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\bin\Debug\UserBSLayer.dll
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\bin\Debug\UserBSLayer.pdb
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\bin\Debug\UserDBlayer.dll
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\bin\Debug\UserDBlayer.pdb
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.csprojAssemblyReference.cache
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.csproj.CoreCompileInputs.cache
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.csproj.CopyComplete
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.dll
+C:\Users\Hamza\Downloads\CureTours\UserBSLayer\obj\Debug\UserBSLayer.pdb
