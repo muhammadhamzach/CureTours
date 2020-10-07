@@ -62,7 +62,15 @@ namespace CureTours
 
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
-
+            if ((sender as Button).Text == "Delete")
+            {
+                Button lb = (Button)sender;
+                GridViewRow Row = (GridViewRow)lb.NamingContainer;
+                GridViewRow row = TourGrid.Rows[Row.RowIndex];
+                admin.deleteTour_BS(row.Cells[2].Text.ToString());
+                Response.Redirect(Request.RawUrl, true);
+            }
+            
         }
 
     }

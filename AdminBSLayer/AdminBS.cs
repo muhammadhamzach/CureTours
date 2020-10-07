@@ -58,5 +58,10 @@ namespace AdminBSLayer
         {
             return admin.finalizedUser_DB(tourID);
         }
+
+        public void deleteTour_BS(string tourID)
+        {
+            admin.deleteTour_DB(tourID);
+        }
     }
 }

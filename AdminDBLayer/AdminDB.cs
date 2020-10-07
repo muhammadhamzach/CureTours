@@ -195,5 +195,22 @@ namespace AdminDBLayer
                 catch { return 0; }
             }
         }
+
+        public void deleteTour_DB(string tourID)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+
+                SqlCommand cmd = new SqlCommand("DELETE_TOUR", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@TOURID", tourID);
+                connection.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch { }
+            }
+        }
     }
 }
