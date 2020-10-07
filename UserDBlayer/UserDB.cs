@@ -63,5 +63,25 @@ namespace UserDBlayer
                 catch { }
             }
         }
+
+        public object accept_list_DB(string UserID)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("ACCEPT_LIST_SHOW_USER", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserID", UserID);
+                
+                connection.Open();
+                //try
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataSet dt = new DataSet();
+                    da.Fill(dt);
+                    return dt;
+                }
+               // catch { return 0; }
+            }
+        }
     }
 }

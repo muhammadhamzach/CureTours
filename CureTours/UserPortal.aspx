@@ -4,8 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="style/AdminPortalStyle.css" rel="stylesheet" />
-    <link href="style/UserPortalStyle.css" rel="stylesheet" />
+    <link href="../style/AdminPortalStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../style/UserPortalStyle.css" rel="stylesheet" type="text/css"/>
     <title>User Portal</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
             </p>
 
             <div class="infoGrid">
-                <asp:GridView ID="TourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="90%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
+                <asp:GridView ID="TourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="80%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -48,14 +48,34 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
-            </asp:GridView>
+                </asp:GridView>
+            </div>
+        </div>
+
+        <div class="accepted">
+            <div>
+                <h3 class="acceptTitle"> Existing Requests Status </h3>
             </div>
             
+
+            <div class="acceptGridDiv">
+                <asp:GridView ID="acceptedTourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="40%" ShowHeaderWhenEmpty="True">
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
+                </asp:GridView>
+            </div>
         </div>
-        <p class="logOut">
+
+        <div class="logOut">
             
-        <asp:Button ID="LogOutButton" runat="server" OnClick="LogOutButton_Click" Text="Log Out" Height="25px" Width="170px" />
-        </p>
+            <asp:Button ID="LogOutButton" runat="server" OnClick="LogOutButton_Click" Text="Log Out" Height="25px" Width="170px" />
+        </div>
     </form>
 </body>
 </html>

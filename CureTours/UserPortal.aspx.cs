@@ -20,6 +20,7 @@ namespace CureTours
             if (!Page.IsPostBack)
             {
                 tour_detail_box();
+                accepted_list_show();
             }
 
             //name and user role corresponding to a userID
@@ -37,6 +38,13 @@ namespace CureTours
             object reader = user.tourList_BS();
             TourGrid.DataSource = reader as DataSet;
             TourGrid.DataBind();
+        }
+
+        protected void accepted_list_show()
+        {
+            object reader = user.accept_list_BS(UserID);
+            acceptedTourGrid.DataSource = reader as DataSet;
+            acceptedTourGrid.DataBind();
         }
 
         protected void InterestedButton_Click(object sender, EventArgs e)   //if user shows interest against a specfied tour

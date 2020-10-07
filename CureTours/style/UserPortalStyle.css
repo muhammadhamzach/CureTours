@@ -4,21 +4,26 @@
     background-size: cover;
 }
 
-.Title{
-
-    padding-right:50%;
-}
-
-
-
-.infoGrid {
-    padding-top:1%;
-}
-
-.logOut {
-    padding-left: 38%;
-}
-
 .message{
     padding-top:1%;
+    padding-bottom:1%;
+}
+
+.acceptTitle {
+    font-size:25px;
+    padding-bottom: 2%;
+}
+
+
+.acceptGridDiv {
+    padding-left: 27%;
+    padding-bottom:1%;
+}
+
+#acceptedTourGrid td {
+    padding: 8px 10px;
+}
+
+#acceptedTourGrid th {
+    padding: 8px 25px;
 }

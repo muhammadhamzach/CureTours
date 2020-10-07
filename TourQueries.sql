@@ -75,6 +75,17 @@ AS BEGIN
 END
 GO
 
+--SHOWING ACCEPTED LIST TO USER
+CREATE OR ALTER PROCEDURE ACCEPT_LIST_SHOW_USER
+@USERID INT
+AS BEGIN
+	SELECT tourlist.Title, interested_list.[User Status] FROM tourlist
+	FULL OUTER JOIN
+	interested_list ON tourlist.TourID=interested_list.TourID
+	WHERE interested_list.UserID=@USERID
+END
+GO
+
 --FOR DISPLAYING NAME OF USER AND THEIR ROLE ON USERPORTAL
 CREATE OR ALTER PROCEDURE RETURN_NAME_ROLE
 @USERID INT
@@ -168,6 +179,15 @@ AS BEGIN
 	FULL OUTER JOIN interested_list
 	ON usersEntry.UserID = interested_list.UserID
 	WHERE interested_list.TourID=@TOURID AND interested_list.[User Status] = 'Accept'
+END
+GO
+
+--DELETING TOUR BY ADMIN
+CREATE OR ALTER PROCEDURE DELETE_TOUR
+@TOURID INT
+AS BEGIN
+	DELETE FROM tourlist WHERE TourID=@TOURID
+	DELETE FROM interested_list WHERE TourID=@TOURID
 END
 GO
 

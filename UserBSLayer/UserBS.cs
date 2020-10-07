@@ -32,5 +32,10 @@ namespace UserBSLayer
                 return false;
         }
 
+        public object accept_list_BS(string UserID)
+        {
+            return user.accept_list_DB(UserID);
+        }
+
     }
 }
