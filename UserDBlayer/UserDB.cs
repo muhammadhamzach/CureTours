@@ -73,14 +73,14 @@ namespace UserDBlayer
                 cmd.Parameters.AddWithValue("@UserID", UserID);
                 
                 connection.Open();
-                //try
+                try
                 {
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet dt = new DataSet();
                     da.Fill(dt);
                     return dt;
                 }
-               // catch { return 0; }
+                catch { return 0; }
             }
         }
     }

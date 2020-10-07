@@ -12,6 +12,11 @@ namespace CureTours
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["ID"].ToString() != "0")
+            {
+                Session["ID"] = "";
+                Response.Redirect("Login.aspx");
+            }
             if (!Page.IsPostBack)
                 tour_detail_box();
         }
@@ -50,6 +55,7 @@ namespace CureTours
 
         protected void LogOutButton_Click(object sender, EventArgs e)   //log out to the main screen
         {
+            Session["ID"] = "";
             Response.Redirect("Login.aspx");
         }
 

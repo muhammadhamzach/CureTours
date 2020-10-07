@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
+    <meta http-equiv="Expires" content="0"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
     <link href="style/CreateTourStyle.css" rel="stylesheet" />
     <title>Create Tour (admin)</title>
 </head>
@@ -21,12 +24,12 @@
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Tour Name"
                     ValidationExpression="^[a-zA-Z0-9-]+(([',. ][a-zA-Z ])?[a-zA-Z]*)*$"
-                    ControlToValidate="TourTitle"> </asp:RegularExpressionValidator>
+                    ControlToValidate="TourTitle" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="tourTitleValidator1"
                     runat="server" 
+                    ErrorMessage="Tour name can't be blank"
                     ControlToValidate="TourTitle" 
-                    Display="Dynamic">
-                </asp:RequiredFieldValidator>
+                    Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </p>
 
             <p class="text">Departure Date*
@@ -34,8 +37,12 @@
                 <asp:CompareValidator ID="FromDateValidator" 
                         runat="server"
                         ControlToValidate="DateFromBox" ErrorMessage="Invalid Date Format"
-                        Operator="DataTypeCheck"  Type="Date" ForeColor="Red">
-                </asp:CompareValidator>
+                        Operator="DataTypeCheck"  Type="Date" ForeColor="Red" Display="Dynamic"></asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="FromDateValidator1"
+                    runat="server" 
+                    ErrorMessage="Date can't be blank"
+                    ControlToValidate="DateFromBox" 
+                    Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </p>
 
             <p class="text">
@@ -44,8 +51,12 @@
                 <asp:CompareValidator ID="ToDateValidator" 
                         runat="server"
                         ControlToValidate="DateToBox" ErrorMessage="Invalid Date Format"
-                        Operator="DataTypeCheck" Type="Date" ForeColor="Red">
-                    </asp:CompareValidator>
+                        Operator="DataTypeCheck" Type="Date" ForeColor="Red" Display="Dynamic"></asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="ToDateValidator1"
+                    runat="server" 
+                    ErrorMessage="Date can't be blank"
+                    ControlToValidate="DateToBox" 
+                    Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </p>
 
             <p class="text">Plan*
@@ -64,10 +75,10 @@
                     ErrorMessage="Invalid Number" 
                     SetFocusOnError="true"
                     ControlToValidate="SeatCountBox" Display="Dynamic" ForeColor="red" Type="Integer"
-                    MinimumValue="1" MaximumValue="1000"/>
+                    MinimumValue="1" MaximumValue="100000"/>
                 <asp:RequiredFieldValidator ID="seatCountValidator1"
                     runat="server" 
-                    ControlToValidate="SeatCountBox" 
+                    ControlToValidate="SeatCountBox" ErrorMessage="Seat count cant be blank" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
@@ -82,7 +93,7 @@
                     MinimumValue="1" MaximumValue="100000"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
                     runat="server" 
-                    ControlToValidate="CostBox" 
+                    ControlToValidate="CostBox" ErrorMessage="Cost/Head cant be blank" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>

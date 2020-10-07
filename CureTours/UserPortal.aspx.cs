@@ -17,6 +17,12 @@ namespace CureTours
         {
             UserID = Request.QueryString["ID"];
 
+            if (Session["ID"].ToString() != UserID)
+            {
+                Session["ID"] = "";
+                Response.Redirect("Login.aspx");
+            }
+
             if (!Page.IsPostBack)
             {
                 tour_detail_box();
@@ -26,8 +32,12 @@ namespace CureTours
             //name and user role corresponding to a userID
             object obj = user.returnRole_BS(UserID);
             DataTable dt = obj as DataTable;
-            Name = dt.Rows[0][0].ToString();
-            User_Role = dt.Rows[0][1].ToString();
+            try
+            {
+                Name = dt.Rows[0][0].ToString();
+                User_Role = dt.Rows[0][1].ToString();
+            }
+            catch { }
             NameLabel.Text = Name;
             UserRoleLabel.Text = User_Role;
 
@@ -80,6 +90,7 @@ namespace CureTours
 
         protected void LogOutButton_Click(object sender, EventArgs e)       //redirecting to login page
         {
+            Session["ID"] = "";
             Response.Redirect("Login.aspx");
         }
     }

@@ -4,7 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <meta charset="UTF-8"/>
+        <meta http-equiv="Expires" content="0"/>
+        <meta http-equiv="Cache-Control" content="no-cache"/>
+        <meta http-equiv="Pragma" content="no-cache"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="style/LoginStyle.css" rel="stylesheet" />
         <title>CureTours</title>

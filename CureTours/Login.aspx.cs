@@ -21,9 +21,15 @@ namespace CureTours
             {
                 FormsAuthentication.RedirectFromLoginPage(Username.Text, false);
                 if (dt.Rows[0][0].ToString().Equals("0"))
+                {
+                    Session["ID"] = "0";
                     Response.Redirect("AdminPortal.aspx?ID=" + "0");
+                }
                 else
+                {
+                    Session["ID"] = dt.Rows[0][0].ToString();
                     Response.Redirect("UserPortal.aspx?ID=" + dt.Rows[0][0].ToString());
+                } 
             }
             else
                 LoginErrorLabel.Text = "Invalid Login Attempt, Try Again";

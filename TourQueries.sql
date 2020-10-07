@@ -196,4 +196,5 @@ SELECT * FROM logindetails
 SELECT * FROM usersEntry
 SELECT * FROM tourlist
 SELECT * FROM interested_list
+
 UPDATE tourlist SET [Remaining Seats]=[Total Seats]

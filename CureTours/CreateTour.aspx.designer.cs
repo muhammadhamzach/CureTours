@@ -69,6 +69,15 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.CompareValidator FromDateValidator;
 
         /// <summary>
+        /// FromDateValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FromDateValidator1;
+
+        /// <summary>
         /// DateToBox control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator ToDateValidator;
+
+        /// <summary>
+        /// ToDateValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ToDateValidator1;
 
         /// <summary>
         /// PlanBox control.

@@ -21,11 +21,10 @@
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Username"
                     ValidationExpression="^[a-z0-9_]{5,15}$"
-                    ControlToValidate="UsernameBox">
-                </asp:RegularExpressionValidator>
+                    ControlToValidate="UsernameBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="usernamevalidator1"
                     runat="server" 
-                    ControlToValidate="UsernameBox" 
+                    ControlToValidate="UsernameBox" ErrorMessage="Username cant be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
@@ -36,11 +35,10 @@
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Password"
                     ValidationExpression="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-                    ControlToValidate="PasswordBox">
-                </asp:RegularExpressionValidator>
+                    ControlToValidate="PasswordBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="passwordvalidator1"
                     runat="server" 
-                    ControlToValidate="PasswordBox" 
+                    ControlToValidate="PasswordBox" ErrorMessage="Password cant be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
@@ -52,11 +50,10 @@
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid character in Name"
                     ValidationExpression="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
-                    ControlToValidate="NameBox">
-                </asp:RegularExpressionValidator>
+                    ControlToValidate="NameBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="namevalidator1"
                     runat="server" 
-                    ControlToValidate="NameBox" 
+                    ControlToValidate="NameBox" ErrorMessage="Name cant be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
@@ -78,11 +75,10 @@
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Mobile Number Style"
                     ValidationExpression="^((\+92)|(0092)|(92))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$"
-                    ControlToValidate="PhoneBox">
-                </asp:RegularExpressionValidator>
+                    ControlToValidate="PhoneBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="mobilenumbervalidator1"
                     runat="server" 
-                    ControlToValidate="PhoneBox" 
+                    ControlToValidate="PhoneBox" ErrorMessage="Phone cant be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
@@ -99,7 +95,7 @@
                 </asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="emailvalidator1"
                     runat="server" 
-                    ControlToValidate="EmailBox" 
+                    ControlToValidate="EmailBox" ErrorMessage="Email cant be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
        
