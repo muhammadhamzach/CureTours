@@ -34,7 +34,7 @@
 
             <div class="text">Departure Date*
                 <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="360px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
-                <asp:Button ID="CalenderFrom" runat="server" Text="C" Width="38px" Height="34px" CausesValidation="False" OnClick="CalenderFrom_Click"/>
+                <asp:ImageButton ID="CalenderFromButton" runat="server" ImageUrl="~/pics/Calendar-icon.png" Width="38px" Height="34px" CausesValidation="False" OnClick="CalenderFrom_Click" ImageAlign="AbsBottom" />
                 <asp:CompareValidator ID="FromDateValidator" 
                         runat="server"
                         ControlToValidate="DateFromBox" ErrorMessage="Invalid Date Format"
@@ -44,6 +44,7 @@
                     ErrorMessage="Date can't be blank"
                     ControlToValidate="DateFromBox" 
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:Label ID="DateFromError" runat="server" ForeColor="Red"></asp:Label>
                 <div class="calender">
                     <asp:Calendar ID="CalendarFromDate" runat="server" Visible="False"  BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="170px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="360px" OnSelectionChanged="CalendarFromDate_SelectionChanged">
                         <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
@@ -62,7 +63,7 @@
             <div class="text">
                 Return Date*
                 <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="360px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
-                <asp:Button ID="CalenderTo" runat="server" Text="C" Width="38px" Height="34px" CausesValidation="False" OnClick="CalenderTo_Click"/>
+                <asp:ImageButton ID="CalenderToButton" Width="38px" Height="34px" ImageUrl="~/pics/Calendar-icon.png" CausesValidation="False" runat="server" OnClick="CalenderTo_Click" ImageAlign="AbsMiddle" />
                 <asp:CompareValidator ID="ToDateValidator" 
                         runat="server"
                         ControlToValidate="DateToBox" ErrorMessage="Invalid Date Format"
@@ -72,6 +73,7 @@
                     ErrorMessage="Date can't be blank"
                     ControlToValidate="DateToBox" 
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:Label ID="DateToError" runat="server" ForeColor="Red"></asp:Label>
                 <div class="calender">
                     <asp:Calendar ID="CalendarToDate" runat="server" Visible="False" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="170px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="360px" OnSelectionChanged="CalendarToDate_SelectionChanged">
                         <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />

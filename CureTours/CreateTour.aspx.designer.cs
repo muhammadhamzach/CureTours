@@ -60,13 +60,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox DateFromBox;
 
         /// <summary>
-        /// CalenderFrom control.
+        /// CalenderFromButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CalenderFrom;
+        protected global::System.Web.UI.WebControls.ImageButton CalenderFromButton;
 
         /// <summary>
         /// FromDateValidator control.
@@ -87,6 +87,15 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.RequiredFieldValidator FromDateValidator1;
 
         /// <summary>
+        /// DateFromError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateFromError;
+
+        /// <summary>
         /// CalendarFromDate control.
         /// </summary>
         /// <remarks>
@@ -105,13 +114,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox DateToBox;
 
         /// <summary>
-        /// CalenderTo control.
+        /// CalenderToButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CalenderTo;
+        protected global::System.Web.UI.WebControls.ImageButton CalenderToButton;
 
         /// <summary>
         /// ToDateValidator control.
@@ -130,6 +139,15 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ToDateValidator1;
+
+        /// <summary>
+        /// DateToError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateToError;
 
         /// <summary>
         /// CalendarToDate control.

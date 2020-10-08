@@ -69,6 +69,12 @@ namespace CureTours
             object reader = admin.show_users_BS();
             usersGrid.DataSource = reader as DataSet;
             usersGrid.DataBind();
+
+            if (usersGrid.Visible == false)
+                usersGrid.Visible = true;
+            else
+                usersGrid.Visible = false;
+
         }
 
         protected void DeleteButton_Click(object sender, EventArgs e)

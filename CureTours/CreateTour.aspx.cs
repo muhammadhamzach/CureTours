@@ -32,10 +32,20 @@ namespace CureTours
 
         protected void TourSaveButton_Click(object sender, EventArgs e)     //when tour save button is pressed after saved creation/edit
         {
-            admin.tourSave_BS(tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
-            if (!tourID.All(Char.IsDigit))
-                Response.Redirect("CreateTour.aspx?ID=new");
-            TourMessage.Text = "Tour Details Modified";
+            if(DateTime.Parse(DateFromBox.Text) > DateTime.Parse(DateToBox.Text))
+            {
+                DateFromError.Text = "Invalid Date";
+                DateToError.Text = "Invalid Date";
+                DateFromBox.Text = "";
+                DateToBox.Text = "";
+            }
+            else
+            {
+                admin.tourSave_BS(tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
+                if (!tourID.All(Char.IsDigit))
+                    Response.Redirect("CreateTour.aspx?ID=new");
+                TourMessage.Text = "Tour Details Modified";
+            }   
         }
 
         protected void ReturnButton_Click(object sender, EventArgs e)       //redirecting back to admin portal
@@ -43,7 +53,23 @@ namespace CureTours
             Response.Redirect("AdminPortal.aspx?ID=" + tourID);
         }
 
-        protected void CalenderFrom_Click(object sender, EventArgs e)
+        protected void CalendarFromDate_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Now < CalendarFromDate.SelectedDate)
+            {
+                DateFromBox.Text = CalendarFromDate.SelectedDate.ToString("dd-MM-yyyy");
+            }
+        }
+
+        protected void CalendarToDate_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Now < CalendarToDate.SelectedDate)
+            {
+                DateToBox.Text = CalendarToDate.SelectedDate.ToString("dd-MM-yyyy");
+            } 
+        }
+
+        protected void CalenderFrom_Click(object sender, ImageClickEventArgs e)
         {
             if (CalendarFromDate.Visible == false)
                 CalendarFromDate.Visible = true;
@@ -51,22 +77,12 @@ namespace CureTours
                 CalendarFromDate.Visible = false;
         }
 
-        protected void CalenderTo_Click(object sender, EventArgs e)
+        protected void CalenderTo_Click(object sender, ImageClickEventArgs e)
         {
             if (CalendarToDate.Visible == false)
                 CalendarToDate.Visible = true;
             else
                 CalendarToDate.Visible = false;
-        }
-
-        protected void CalendarFromDate_SelectionChanged(object sender, EventArgs e)
-        {
-            DateFromBox.Text = CalendarFromDate.SelectedDate.ToString("dd-MM-yyyy");
-        }
-
-        protected void CalendarToDate_SelectionChanged(object sender, EventArgs e)
-        {
-            DateToBox.Text = CalendarToDate.SelectedDate.ToString("dd-MM-yyyy");
         }
     }
 }
