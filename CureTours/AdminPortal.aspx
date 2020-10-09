@@ -7,7 +7,7 @@
     <meta http-equiv="Expires" content="0"/>
     <meta http-equiv="Cache-Control" content="no-cache"/>
     <meta http-equiv="Pragma" content="no-cache"/>
-    <link href="../style/AdminPortalStyle.css" rel="stylesheet" type="text/css"//>
+    <link href="../style/AdminPortalStyle.css" rel="stylesheet" type="text/css" />
     <title>Cure Tours (admin)</title>
 </head>
 <body>
@@ -60,11 +60,11 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-         </div> 
-            <div class="showUsers">
+         </div > 
+            <div class="showUsers" >
                 <p ><asp:Button ID="showUsers" runat="server" Text="Show User List" Height="25px" Width="170px" OnClick="showUsers_Click" /> </p>
-                <div class="userGrid">
-                    <asp:GridView ID="usersGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                <div class="userGrid" >
+                    <asp:GridView ID="usersGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False">
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -76,7 +76,7 @@
                     </asp:GridView>
                 </div>
             </div>
-            <p class="logOut"> <asp:Button ID="LogOutButton" runat="server" OnClick="LogOutButton_Click" Text="Log Out" Height="25px" Width="170px" /> </p>
+            <p class="logOut" style="padding-bottom:5%;"> <asp:Button ID="LogOutButton" runat="server" OnClick="LogOutButton_Click" Text="Log Out" Height="25px" Width="170px" /> </p>
        </div>
         
 

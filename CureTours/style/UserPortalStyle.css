@@ -10,6 +10,7 @@
 }
 
 .acceptTitle {
+    padding-top:2%;
     font-size:25px;
     padding-bottom: 2%;
 }
@@ -17,7 +18,9 @@
 
 .acceptGridDiv {
     padding-left: 27%;
-    padding-bottom:1%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    height:175px;
 }
 
 #acceptedTourGrid td {

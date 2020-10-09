@@ -32,7 +32,7 @@ namespace CureTours
 
         protected void TourSaveButton_Click(object sender, EventArgs e)     //when tour save button is pressed after saved creation/edit
         {
-            if(DateTime.Parse(DateFromBox.Text) > DateTime.Parse(DateToBox.Text))
+            if((DateTime.Parse(DateFromBox.Text) > DateTime.Parse(DateToBox.Text)) || (DateTime.Parse(DateFromBox.Text) < DateTime.Now))
             {
                 DateFromError.Text = "Invalid Date";
                 DateToError.Text = "Invalid Date";

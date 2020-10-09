@@ -57,7 +57,7 @@
 
         <div class="accepted">
             <div>
-                <h3 class="acceptTitle"> Existing Requests Status </h3>
+                <h3 class="acceptTitle" > Existing Requests Status </h3>
             </div>
             
 
