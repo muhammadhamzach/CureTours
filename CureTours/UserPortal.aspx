@@ -34,10 +34,11 @@
             </p>
 
             <div class="infoGrid">
-                <asp:GridView ID="TourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="80%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
+                <asp:GridView ID="TourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="80%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound" AllowPaging="True" OnPageIndexChanging="TourGrid_PageIndexChanging" PageSize="5">
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <PagerSettings PageButtonCount="5" />
+                <PagerStyle ForeColor="Black" HorizontalAlign="Right" />
                 <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F7F7F7" />
                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
@@ -62,10 +63,11 @@
             
 
             <div class="acceptGridDiv">
-                <asp:GridView ID="acceptedTourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="40%" ShowHeaderWhenEmpty="True">
+                <asp:GridView ID="acceptedTourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="40%" ShowHeaderWhenEmpty="True" AllowPaging="True" OnPageIndexChanging="acceptedTourGrid_PageIndexChanging" PageSize="4">
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <PagerSettings PageButtonCount="5" />
+                <PagerStyle ForeColor="Black" HorizontalAlign="Right" />
                 <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F7F7F7" />
                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />

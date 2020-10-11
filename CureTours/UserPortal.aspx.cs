@@ -12,16 +12,21 @@ namespace CureTours
         string User_Role = "";
         string UserID = "";
         UserBS user = new UserBS();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
             UserID = Request.QueryString["ID"];
-
-            if (Session["ID"].ToString() != UserID)
+            try
             {
-                Session["ID"] = "";
-                Response.Redirect("Login.aspx");
+                if (Session["ID"].ToString() != UserID || Session["ID"] == null)
+                {
+                    Session["ID"] = "";
+                    Response.Redirect("Login.aspx");
+                }
             }
+            catch { Response.Redirect("Login.aspx"); }
+            
 
             if (!Page.IsPostBack)
             {
@@ -46,15 +51,43 @@ namespace CureTours
         protected void tour_detail_box()    //listing all the tours for user view
         {
             object reader = user.tourList_BS();
-            TourGrid.DataSource = reader as DataSet;
+            DataSet ds = reader as DataSet;
+            TourGrid.DataSource = ds;
             TourGrid.DataBind();
+
+            int i = 0;
+            foreach (GridViewRow row in TourGrid.Rows)
+            {
+                Button InterestButton = (Button)row.FindControl("InterestedButton");
+                bool valid_date = user.dateComparator(TourGrid.Rows[row.RowIndex].Cells[3].Text.ToString());
+                int rem_seats = Int32.Parse(TourGrid.Rows[row.RowIndex].Cells[7].Text.ToString());
+                if (!valid_date || rem_seats==0)
+                {
+                    InterestButton.Enabled = false;
+                    i++;
+                }
+            }
         }
 
         protected void accepted_list_show()
         {
             object reader = user.accept_list_BS(UserID);
-            acceptedTourGrid.DataSource = reader as DataSet;
+            DataSet ds = reader as DataSet;
+            acceptedTourGrid.DataSource = ds;
             acceptedTourGrid.DataBind();
+
+            foreach (GridViewRow row in TourGrid.Rows)
+            {
+                Button InterestButton = (Button)row.FindControl("InterestedButton");
+                for (int j = 0; j < ds.Tables[0].Rows.Count; j++)
+                {
+                    if (ds.Tables[0].Rows[j][0].ToString() == TourGrid.Rows[row.RowIndex].Cells[2].Text.ToString())
+                    {      
+                        InterestButton.Enabled = false;
+                        break;
+                    }
+                }        
+            }
         }
 
         protected void InterestedButton_Click(object sender, EventArgs e)   //if user shows interest against a specfied tour
@@ -65,17 +98,9 @@ namespace CureTours
                 GridViewRow Row = (GridViewRow)lb.NamingContainer;
                 GridViewRow row = TourGrid.Rows[Row.RowIndex];
                 bool valid_date = user.dateComparator(row.Cells[3].Text.ToString());
-
-                int rem_seats = Int32.Parse(row.Cells[7].Text.ToString());
-                if (rem_seats == 0)
-                    TourInterestLabel.Text = "No Seat Remainings!";
-                else if (!valid_date)
-                    TourInterestLabel.Text = "Time to register has exceeded!";
-                else
-                {
-                    user.interestUser_BS(UserID, row.Cells[1].Text.ToString());
-                    TourInterestLabel.Text = "Request Submitted!";
-                }
+                user.interestUser_BS(UserID, row.Cells[1].Text.ToString());
+                TourInterestLabel.Text = "Request Submitted!";
+                lb.Enabled = false;
             }
         }
 
@@ -92,6 +117,19 @@ namespace CureTours
         {
             Session["ID"] = "";
             Response.Redirect("Login.aspx");
+        }
+
+        protected void TourGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            TourGrid.PageIndex = e.NewPageIndex;
+            tour_detail_box();
+            accepted_list_show();
+        }
+
+        protected void acceptedTourGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            acceptedTourGrid.PageIndex = e.NewPageIndex;
+            accepted_list_show();
         }
     }
 }

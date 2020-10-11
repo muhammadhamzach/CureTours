@@ -32,13 +32,15 @@
 
             <p class ="newTour"><asp:Button ID="NewTourCreationButton" runat="server" OnClick="NewTourCreationButton_Click" Text="Create New Tour" Height="25px" Width="170px" /></p>
             
+            <p class="delLabel"><asp:Label ID="DeleteLabel" runat="server" ForeColor="Red"></asp:Label></p>
             <div class="infoGrid">
                 <asp:GridView ID="TourGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" 
-                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="87%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound">
+                    BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="87%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound" AllowPaging="True" OnPageIndexChanging="TourGrid_PageIndexChanging" PageSize="5">
                     <EditRowStyle HorizontalAlign="Center" />
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <PagerSettings PageButtonCount="5" />
+                <PagerStyle ForeColor="Black" HorizontalAlign="Right" />
                 <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F7F7F7" />
                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
@@ -64,10 +66,11 @@
             <div class="showUsers" >
                 <p ><asp:Button ID="showUsers" runat="server" Text="Show User List" Height="25px" Width="170px" OnClick="showUsers_Click" /> </p>
                 <div class="userGrid" >
-                    <asp:GridView ID="usersGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False">
+                    <asp:GridView ID="usersGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="usersGrid_PageIndexChanging">
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                        <PagerSettings PageButtonCount="5" />
+                        <PagerStyle  ForeColor="Black" HorizontalAlign="Right" />
                         <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                         <SortedAscendingCellStyle BackColor="#F7F7F7" />
                         <SortedAscendingHeaderStyle BackColor="#4B4B4B" />

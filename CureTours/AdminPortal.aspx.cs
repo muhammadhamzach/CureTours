@@ -12,6 +12,11 @@ namespace CureTours
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string label = Request.QueryString["label"];
+            if (label != "" || label !=null)
+            {
+                DeleteLabel.Text = label;
+            }
             try
             {
                 if (Session["ID"].ToString() != "0")
@@ -21,7 +26,6 @@ namespace CureTours
                 }
             }
             catch { Response.Redirect("Login.aspx"); }
-
             if (!Page.IsPostBack)
                 tour_detail_box();
         }
@@ -84,11 +88,25 @@ namespace CureTours
                 Button lb = (Button)sender;
                 GridViewRow Row = (GridViewRow)lb.NamingContainer;
                 GridViewRow row = TourGrid.Rows[Row.RowIndex];
+                string deletelabelcheck = row.Cells[3].Text.ToString() + " Tour Deleted!!";
                 admin.deleteTour_BS(row.Cells[2].Text.ToString());
-                Response.Redirect(Request.RawUrl, true);
+                Response.Redirect(Request.RawUrl + "&label=" + deletelabelcheck, true);
             }
             
         }
 
+        protected void TourGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            TourGrid.PageIndex = e.NewPageIndex;
+            tour_detail_box();
+        }
+
+        protected void usersGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            usersGrid.PageIndex = e.NewPageIndex;
+            object reader = admin.show_users_BS();
+            usersGrid.DataSource = reader as DataSet;
+            usersGrid.DataBind();
+        }
     }
 }

@@ -15,22 +15,22 @@
         <div class="signupForm">
 
             <p class="text">Username:*
-                <asp:TextBox ID="UsernameBox" runat="server" style="margin-left: 59px" AutoPostBack="True" CausesValidation="True" placeholder ="Enter a username" Height="30px" Width="400px" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="UsernameBox" runat="server" style="margin-left: 59px" AutoPostBack="True" CausesValidation="True" placeholder ="Enter a username" Height="30px" Width="400px" AutoCompleteType="Disabled" MaxLength="20"></asp:TextBox>
                 <asp:Label ID="UsernameLabel" runat="server" ForeColor="Red"></asp:Label>
                 <asp:RegularExpressionValidator ID="usernamevalidator" 
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Username"
-                    ValidationExpression="^[a-z0-9_]{5,15}$"
+                    ValidationExpression="^[a-z0-9_]{5,20}$"
                     ControlToValidate="UsernameBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="usernamevalidator1"
                     runat="server" 
-                    ControlToValidate="UsernameBox" ErrorMessage="Username cant be empty" ForeColor="Red"
+                    ControlToValidate="UsernameBox" ErrorMessage="Username can't be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
         
             <p class="text">Password:*
-                <asp:TextBox ID="PasswordBox" runat="server" style="margin-left: 62px" TextMode="Password" placeholder ="Enter password for sign-in:" Height="30px" Width="400px" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="PasswordBox" runat="server" style="margin-left: 62px" TextMode="Password" placeholder ="Enter password for sign-in:" Height="30px" Width="400px" AutoCompleteType="Disabled" MaxLength="20"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="passwordvalidator" 
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Password"
@@ -38,14 +38,14 @@
                     ControlToValidate="PasswordBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="passwordvalidator1"
                     runat="server" 
-                    ControlToValidate="PasswordBox" ErrorMessage="Password cant be empty" ForeColor="Red"
+                    ControlToValidate="PasswordBox" ErrorMessage="Password can't be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
             <p  class="pwd" style ="font-size: 12px">Password is atleast 8 character long, contains atleast 1 Uppercase, 1 Lowercase, 1 Number and 1 Special Character</p>
 
             <p class="text">Name:*
-                <asp:TextBox ID="NameBox" runat="server" style="margin-left: 90px" placeholder ="Enter your Name" Height="30px" Width="400px" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="NameBox" runat="server" style="margin-left: 90px" placeholder ="Enter your Name" Height="30px" Width="400px" AutoCompleteType="Disabled" MaxLength="20"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="namevalidator" 
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid character in Name"
@@ -53,7 +53,7 @@
                     ControlToValidate="NameBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="namevalidator1"
                     runat="server" 
-                    ControlToValidate="NameBox" ErrorMessage="Name cant be empty" ForeColor="Red"
+                    ControlToValidate="NameBox" ErrorMessage="Name can't be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
@@ -78,13 +78,13 @@
                     ControlToValidate="PhoneBox" Display="Dynamic"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="mobilenumbervalidator1"
                     runat="server" 
-                    ControlToValidate="PhoneBox" ErrorMessage="Phone cant be empty" ForeColor="Red"
+                    ControlToValidate="PhoneBox" ErrorMessage="Phone No can't be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
             </p>
 
             <p class="text">Email:*
-                <asp:TextBox ID="EmailBox" runat="server" style="margin-left: 88px" placeholder ="Enter your email address:" Height="30px" Width="400px" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="EmailBox" runat="server" style="margin-left: 88px" placeholder ="Enter your email address:" Height="30px" Width="400px" AutoCompleteType="Disabled" MaxLength="30"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="emailvalidator" 
                         runat="server" 
                         ControlToValidate="EmailBox"
@@ -95,14 +95,14 @@
                 </asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="emailvalidator1"
                     runat="server" 
-                    ControlToValidate="EmailBox" ErrorMessage="Email cant be empty" ForeColor="Red"
+                    ControlToValidate="EmailBox" ErrorMessage="Email can't be empty" ForeColor="Red"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
        
             </p>
 
             <p class="text">About You!</p>
-            <p><asp:TextBox ID="DescriptionBox" runat="server" Height="80px" Width="560px" TextMode="MultiLine" Font-Size="14pt" AutoCompleteType="Disabled"></asp:TextBox>
+            <p><asp:TextBox ID="DescriptionBox" runat="server" Height="80px" Width="560px" TextMode="MultiLine" Font-Size="14pt" AutoCompleteType="Disabled" MaxLength="200"></asp:TextBox>
             </p>
         
             <p class="signupButton">

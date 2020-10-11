@@ -19,7 +19,7 @@
         </div>
         <div class="tourForm">
             <p class="text">Title*
-                <asp:TextBox ID="TourTitle" runat="server" style="margin-left: 130px" placeholder="Tour Name" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="TourTitle" runat="server" style="margin-left: 130px" placeholder="Tour Name" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled" MaxLength="30"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="tourTitleValidator" 
                     runat="server"  ForeColor="Red" 
                     ErrorMessage="Invalid Tour Name"
@@ -89,7 +89,7 @@
             </div>
 
             <p class="text">Plan*
-                <asp:TextBox ID="PlanBox" runat="server" style="margin-left: 131px" TextMode="MultiLine" placeholder ="Enter your plan details here!" Height="190px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="PlanBox" runat="server" style="margin-left: 131px" TextMode="MultiLine" placeholder ="Enter your plan details here!" Height="190px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled" MaxLength="300"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="PlanBoxValidator"
                     runat="server" 
                     ControlToValidate="PlanBox" 

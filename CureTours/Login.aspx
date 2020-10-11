@@ -20,10 +20,24 @@
             <div class="loginForm">
 
                 <p class ="text">Username</p>
-                <p><asp:TextBox ID="Username" runat="server" Width="45%" Height="30px" Font-Size="16px" AutoCompleteType="Disabled"></asp:TextBox></p>
+                <p>
+                    <asp:TextBox ID="Username" runat="server" Width="45%" Height="30px" Font-Size="16px" AutoCompleteType="Disabled"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="usernameValid"
+                    runat="server" 
+                    ErrorMessage="Username can't be blank"
+                    ControlToValidate="Username" 
+                    Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                </p>
 
                 <p class ="text">Password</p>
-                <p ><asp:TextBox ID="Password" runat="server" Width="45%" Height="30px" TextMode="Password" Font-Size="16px" AutoCompleteType="Disabled"></asp:TextBox></p>
+                <p >
+                    <asp:TextBox ID="Password" runat="server" Width="45%" Height="30px" TextMode="Password" Font-Size="16px" AutoCompleteType="Disabled"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="PasswordValid"
+                    runat="server" 
+                    ErrorMessage="Password can't be blank"
+                    ControlToValidate="Password" 
+                    Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                </p>
 
                 <p class="Logbox"><asp:Button ID="LogInButton" runat="server" Text="Log In" Width="45%" Height="30px" OnClick="LogInButton_Click" /></p>
                 <p class="errorlabel"><asp:Label ID="LoginErrorLabel" runat="server" ForeColor="Red"></asp:Label></p>

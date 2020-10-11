@@ -46,17 +46,19 @@ body {
     font-size: 30px;
 }
 
+.delLabel {
+    padding-bottom: 1%;
+}
+
 .newTour {
-    padding-left:77%;
-    padding-bottom:1%;
-    padding-top:1%;
+    padding-left: 77%;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 .infoGrid {
     height: 250px;
-    overflow-y: auto;
     padding-bottom: 0%;
-    overflow-x: hidden"
 }
 
 .showUsers {
@@ -74,8 +76,6 @@ body {
 
 .userGrid {
     height: 120px;
-    overflow-y: auto;
-    overflow-x: hidden;
     padding-top: 2%;
     padding-left: 14%;
 }

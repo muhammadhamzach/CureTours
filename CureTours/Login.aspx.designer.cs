@@ -33,6 +33,15 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox Username;
 
         /// <summary>
+        /// usernameValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator usernameValid;
+
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Password;
+
+        /// <summary>
+        /// PasswordValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordValid;
 
         /// <summary>
         /// LogInButton control.
