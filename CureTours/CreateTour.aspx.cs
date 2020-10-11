@@ -14,6 +14,16 @@ namespace CureTours
         protected void Page_Load(object sender, EventArgs e)
         {
             tourID = Request.QueryString["ID"];     //for retrieving the tourID from URL
+            try
+            {
+                if (Session["ID"].ToString() != "0")
+                {
+                    Session["ID"] = "";
+                    Response.Redirect("Login.aspx");
+                }
+            }
+            catch { Response.Redirect("Login.aspx"); }
+
             if (!Page.IsPostBack)   //if tour is in edit mode, this will put all the details oin the box
             {
                 object obj = admin.show_specific_user_BS(tourID);

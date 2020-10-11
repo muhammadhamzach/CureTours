@@ -17,11 +17,19 @@ namespace CureTours
             tourID = Request.QueryString["ID"];
             try
             {
+                if (Session["ID"].ToString() != "0")
+                {
+                    Session["ID"] = "";
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    object obj = admin.show_specific_tour_BS(tourID);
+                    DataTable dt = obj as DataTable;
+                    tourTitle = dt.Rows[0][0].ToString();
+                    TourTitleTag.Text = tourTitle;
+                }
                 //retrieving title of tour for use later
-                object obj = admin.show_specific_tour_BS(tourID);
-                DataTable dt = obj as DataTable;
-                tourTitle = dt.Rows[0][0].ToString();
-                TourTitleTag.Text = tourTitle;
             }
             catch { Response.Redirect("Login.aspx");  }
 
