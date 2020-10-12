@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.UI;
 using System.Data;
-using AdminBSLayer;
+using BLL;
 
 namespace CureTours
 {
@@ -51,9 +51,14 @@ namespace CureTours
             }
             else
             {
-                admin.tourSave_BS(tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
-                if (!tourID.All(Char.IsDigit))
+                if (tourID.All(Char.IsDigit))
+                    admin.tourSave_BS("EDIT_TOUR", tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
+                else
+                {
+                    admin.tourSave_BS(tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
                     Response.Redirect("CreateTour.aspx?ID=new");
+                }
+                    
                 TourMessage.Text = "Tour Details Modified";
             }   
         }
@@ -61,38 +66,6 @@ namespace CureTours
         protected void ReturnButton_Click(object sender, EventArgs e)       //redirecting back to admin portal
         {
             Response.Redirect("AdminPortal.aspx?ID=" + tourID);
-        }
-
-        protected void CalendarFromDate_SelectionChanged(object sender, EventArgs e)
-        {
-            if (DateTime.Now < CalendarFromDate.SelectedDate)
-            {
-                DateFromBox.Text = CalendarFromDate.SelectedDate.ToString("dd-MM-yyyy");
-            }
-        }
-
-        protected void CalendarToDate_SelectionChanged(object sender, EventArgs e)
-        {
-            if (DateTime.Now < CalendarToDate.SelectedDate)
-            {
-                DateToBox.Text = CalendarToDate.SelectedDate.ToString("dd-MM-yyyy");
-            } 
-        }
-
-        protected void CalenderFrom_Click(object sender, ImageClickEventArgs e)
-        {
-            if (CalendarFromDate.Visible == false)
-                CalendarFromDate.Visible = true;
-            else
-                CalendarFromDate.Visible = false;
-        }
-
-        protected void CalenderTo_Click(object sender, ImageClickEventArgs e)
-        {
-            if (CalendarToDate.Visible == false)
-                CalendarToDate.Visible = true;
-            else
-                CalendarToDate.Visible = false;
         }
     }
 }

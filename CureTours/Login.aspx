@@ -43,7 +43,7 @@
                 <p class="errorlabel"><asp:Label ID="LoginErrorLabel" runat="server" ForeColor="Red"></asp:Label></p>
 
                 <p class="signup">Dont have an account?</p>
-                <p><asp:Button ID="SignUpButton" runat="server" Text="Sign Up" Width="45%" Height="30px" OnClick="SignUpButton_Click" /></p>
+                <p><asp:Button ID="SignUpButton" runat="server" Text="Sign Up" Width="45%" Height="30px" OnClick="SignUpButton_Click" CausesValidation="False" /></p>
             </div>
             
         </form>

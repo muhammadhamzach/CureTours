@@ -75,6 +75,36 @@
     <Content Include="pics\LoginBackground.jpg" />
     <Content Include="pics\SignUpBackground.jpg" />
     <Content Include="pics\UserPortalBackground.jpg" />
+    <Content Include="Pikaday\.gitattributes" />
+    <Content Include="Pikaday\.gitignore" />
+    <Content Include="Pikaday\css\pikaday.css" />
+    <Content Include="Pikaday\css\site.css" />
+    <Content Include="Pikaday\css\theme.css" />
+    <Content Include="Pikaday\css\triangle.css" />
+    <Content Include="Pikaday\examples\amd.html" />
+    <Content Include="Pikaday\examples\aria-label.html" />
+    <Content Include="Pikaday\examples\bound-container.html" />
+    <Content Include="Pikaday\examples\calendars.html" />
+    <Content Include="Pikaday\examples\container.html" />
+    <Content Include="Pikaday\examples\date-fns.html" />
+    <Content Include="Pikaday\examples\date-range.html" />
+    <Content Include="Pikaday\examples\daysInNextMonth.html" />
+    <Content Include="Pikaday\examples\diableDayFn.html" />
+    <Content Include="Pikaday\examples\jquery-amd.html" />
+    <Content Include="Pikaday\examples\jquery.html" />
+    <Content Include="Pikaday\examples\moment.html" />
+    <Content Include="Pikaday\examples\pick-whole-week.html" />
+    <Content Include="Pikaday\examples\position-css-classes.html" />
+    <Content Include="Pikaday\examples\positions.html" />
+    <Content Include="Pikaday\examples\screenshot.png" />
+    <Content Include="Pikaday\examples\theme.html" />
+    <Content Include="Pikaday\examples\trigger.html" />
+    <Content Include="Pikaday\examples\weeknumbers.html" />
+    <Content Include="Pikaday\index.html" />
+    <Content Include="Pikaday\pikaday.js" />
+    <Content Include="Pikaday\plugins\pikaday.jquery.js" />
+    <Content Include="Pikaday\tests\methods.js" />
+    <Content Include="Pikaday\tests\module.js" />
     <Content Include="SignUp.aspx" />
     <Content Include="style\AdminPortalStyle.css" />
     <Content Include="style\CreateTourStyle.css" />
@@ -132,6 +162,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pikaday\.editorconfig" />
+    <Content Include="Pikaday\.jshintrc" />
+    <Content Include="Pikaday\.npmignore" />
+    <Content Include="Pikaday\bower.json" />
+    <Content Include="Pikaday\CHANGELOG.md" />
+    <Content Include="Pikaday\CNAME" />
+    <Content Include="Pikaday\component.json" />
+    <Content Include="Pikaday\LICENSE" />
+    <Content Include="Pikaday\package-lock.json" />
+    <Content Include="Pikaday\package.json" />
+    <Content Include="Pikaday\README.md" />
+    <Content Include="Pikaday\scss\pikaday.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,17 +182,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdminBSLayer\AdminBSLayer.csproj">
-      <Project>{62234725-20c3-4c79-bb2c-7b9dbc8a5430}</Project>
-      <Name>AdminBSLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IntroBSLayer\IntroBSLayer.csproj">
-      <Project>{09fbb2da-a96c-4b13-b0f2-5b8a739544d2}</Project>
-      <Name>IntroBSLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UserBSLayer\UserBSLayer.csproj">
-      <Project>{2122258c-625c-4928-9c4d-d6b78ee7c605}</Project>
-      <Name>UserBSLayer</Name>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{6515427c-39e6-46b7-808d-7d55f844cd4b}</Project>
+      <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

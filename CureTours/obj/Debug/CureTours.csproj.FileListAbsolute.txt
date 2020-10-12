@@ -109,18 +109,6 @@ C:\Users\Hamza\Downloads\CureTours\CureTours\obj\Debug\CureTours.csproj.CoreComp
 C:\Users\Hamza\Downloads\CureTours\CureTours\obj\Debug\CureTours.csproj.CopyComplete
 C:\Users\Hamza\Downloads\CureTours\CureTours\obj\Debug\CureTours.dll
 C:\Users\Hamza\Downloads\CureTours\CureTours\obj\Debug\CureTours.pdb
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\IntroBSLayer.dll
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\IntroDBLayer.dll
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\IntroBSLayer.pdb
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\IntroDBLayer.pdb
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\AdminBSLayer.dll
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\AdminDBLayer.dll
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\AdminBSLayer.pdb
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\AdminDBLayer.pdb
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\UserBSLayer.dll
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\UserDBlayer.dll
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\UserBSLayer.pdb
-C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\UserDBlayer.pdb
 C:\Users\Hamza\Downloads\CureTours\CureTours\bin\AdminBSLayer.dll
 C:\Users\Hamza\Downloads\CureTours\CureTours\bin\IntroBSLayer.dll
 C:\Users\Hamza\Downloads\CureTours\CureTours\bin\UserBSLayer.dll
@@ -133,3 +121,7 @@ C:\Users\Hamza\Downloads\CureTours\CureTours\bin\UserBSLayer.pdb
 C:\Users\Hamza\Downloads\CureTours\CureTours\bin\AdminDBLayer.pdb
 C:\Users\Hamza\Downloads\CureTours\CureTours\bin\IntroDBLayer.pdb
 C:\Users\Hamza\Downloads\CureTours\CureTours\bin\UserDBlayer.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\BLL.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\DBL.dll
+C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\BLL.pdb
+C:\Users\Mohammad.Hamza\Downloads\CureTours\CureTours\bin\DBL.pdb

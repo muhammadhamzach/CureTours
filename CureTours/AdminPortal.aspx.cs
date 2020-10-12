@@ -2,7 +2,7 @@
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using AdminBSLayer;
+using BLL;
 
 namespace CureTours
 {

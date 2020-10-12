@@ -60,15 +60,6 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox DateFromBox;
 
         /// <summary>
-        /// CalenderFromButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton CalenderFromButton;
-
-        /// <summary>
         /// FromDateValidator control.
         /// </summary>
         /// <remarks>
@@ -96,15 +87,6 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.Label DateFromError;
 
         /// <summary>
-        /// CalendarFromDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarFromDate;
-
-        /// <summary>
         /// DateToBox control.
         /// </summary>
         /// <remarks>
@@ -112,15 +94,6 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DateToBox;
-
-        /// <summary>
-        /// CalenderToButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton CalenderToButton;
 
         /// <summary>
         /// ToDateValidator control.
@@ -148,15 +121,6 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label DateToError;
-
-        /// <summary>
-        /// CalendarToDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarToDate;
 
         /// <summary>
         /// PlanBox control.

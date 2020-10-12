@@ -66,7 +66,7 @@
             <div class="showUsers" >
                 <p ><asp:Button ID="showUsers" runat="server" Text="Show User List" Height="25px" Width="170px" OnClick="showUsers_Click" /> </p>
                 <div class="userGrid" >
-                    <asp:GridView ID="usersGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="usersGrid_PageIndexChanging">
+                    <asp:GridView ID="usersGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False" AllowPaging="True" PageSize="4" OnPageIndexChanging="usersGrid_PageIndexChanging">
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                         <PagerSettings PageButtonCount="5" />

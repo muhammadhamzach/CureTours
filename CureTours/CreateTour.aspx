@@ -8,7 +8,11 @@
     <meta http-equiv="Expires" content="0"/>
     <meta http-equiv="Cache-Control" content="no-cache"/>
     <meta http-equiv="Pragma" content="no-cache"/>
+    <link href="Pikaday/css/pikaday.css" rel="stylesheet" />
+    <link href="Pikaday/css/theme.css" rel="stylesheet" />
+    <link href="Pikaday/css/triangle.css" rel="stylesheet" />
     <link href="style/CreateTourStyle.css" rel="stylesheet" />
+    <script src="Pikaday/pikaday.js"></script>
     <title>Create Tour (admin)</title>
 </head>
 
@@ -33,8 +37,7 @@
             </p>
 
             <div class="text">Departure Date*
-                <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="360px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
-                <asp:ImageButton ID="CalenderFromButton" runat="server" ImageUrl="~/pics/Calendar-icon.png" Width="38px" Height="34px" CausesValidation="False" OnClick="CalenderFrom_Click" ImageAlign="AbsBottom" />
+                <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:CompareValidator ID="FromDateValidator" 
                         runat="server"
                         ControlToValidate="DateFromBox" ErrorMessage="Invalid Date Format"
@@ -45,25 +48,34 @@
                     ControlToValidate="DateFromBox" 
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:Label ID="DateFromError" runat="server" ForeColor="Red"></asp:Label>
-                <div class="calender">
-                    <asp:Calendar ID="CalendarFromDate" runat="server" Visible="False"  BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="170px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="360px" OnSelectionChanged="CalendarFromDate_SelectionChanged">
-                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-                        <DayStyle Width="14%" />
-                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-                        <OtherMonthDayStyle ForeColor="#999999" />
-                        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-                        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-                        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-                        <TodayDayStyle BackColor="#CCCC99" />
-                    </asp:Calendar>
-                </div>
-                
+                <script type="text/javascript">
+                    var picker = new Pikaday({
+                        field: document.getElementById('DateFromBox'),
+                        format: 'D/M/YYYY',
+                        minDate: new Date(),
+                        maxDate: new Date('2030-12-31'),
+                        yearRange: [2000, 2030],
+                        theme: 'dark-theme',
+                        toString(date, format) {
+                            const day = date.getDate();
+                            const month = date.getMonth() + 1;
+                            const year = date.getFullYear();
+                            return `${day}/${month}/${year}`;
+                        },
+                        parse(dateString, format) {
+                            const parts = dateString.split('/');
+                            const day = parseInt(parts[0], 10);
+                            const month = parseInt(parts[1], 10) - 1;
+                            const year = parseInt(parts[2], 10);
+                            return new Date(day, month, year);
+                        }
+                    });
+                </script>
             </div>
 
             <div class="text">
                 Return Date*
-                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="360px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
-                <asp:ImageButton ID="CalenderToButton" Width="38px" Height="34px" ImageUrl="~/pics/Calendar-icon.png" CausesValidation="False" runat="server" OnClick="CalenderTo_Click" ImageAlign="AbsMiddle" />
+                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
                 <asp:CompareValidator ID="ToDateValidator" 
                         runat="server"
                         ControlToValidate="DateToBox" ErrorMessage="Invalid Date Format"
@@ -74,18 +86,29 @@
                     ControlToValidate="DateToBox" 
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:Label ID="DateToError" runat="server" ForeColor="Red"></asp:Label>
-                <div class="calender">
-                    <asp:Calendar ID="CalendarToDate" runat="server" Visible="False" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="170px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="360px" OnSelectionChanged="CalendarToDate_SelectionChanged">
-                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-                        <DayStyle Width="14%" />
-                        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-                        <OtherMonthDayStyle ForeColor="#999999" />
-                        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-                        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-                        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-                        <TodayDayStyle BackColor="#CCCC99" />
-                    </asp:Calendar>
-                </div>
+                <script type="text/javascript">
+                    var picker = new Pikaday({
+                        field: document.getElementById('DateToBox'),
+                        format: 'D/M/YYYY',
+                        minDate: new Date(),
+                        maxDate: new Date('2030-12-31'),
+                        yearRange: [2000, 2030],
+                        theme: 'dark-theme',
+                        toString(date, format) {
+                            const day = date.getDate();
+                            const month = date.getMonth() + 1;
+                            const year = date.getFullYear();
+                            return `${day}/${month}/${year}`;
+                        },
+                        parse(dateString, format) {
+                            const parts = dateString.split('/');
+                            const day = parseInt(parts[0], 10);
+                            const month = parseInt(parts[1], 10) - 1;
+                            const year = parseInt(parts[2], 10);
+                            return new Date(day, month, year);
+                        }
+                    });
+                </script>
             </div>
 
             <p class="text">Plan*

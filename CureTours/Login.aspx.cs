@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Web.Security;
-using IntroBSLayer;
+using BLL;
 
 namespace CureTours
 {
