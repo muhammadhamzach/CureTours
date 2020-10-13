@@ -33,22 +33,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox TourTitle;
 
         /// <summary>
-        /// tourTitleValidator control.
+        /// TourLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator tourTitleValidator;
-
-        /// <summary>
-        /// tourTitleValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator tourTitleValidator1;
+        protected global::System.Web.UI.WebControls.Label TourLabel;
 
         /// <summary>
         /// DateFromBox control.
@@ -60,24 +51,6 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox DateFromBox;
 
         /// <summary>
-        /// FromDateValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator FromDateValidator;
-
-        /// <summary>
-        /// FromDateValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator FromDateValidator1;
-
-        /// <summary>
         /// DateFromError control.
         /// </summary>
         /// <remarks>
@@ -85,6 +58,15 @@ namespace CureTours
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label DateFromError;
+
+        /// <summary>
+        /// DateFromLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateFromLabel;
 
         /// <summary>
         /// DateToBox control.
@@ -96,22 +78,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox DateToBox;
 
         /// <summary>
-        /// ToDateValidator control.
+        /// DateToLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator ToDateValidator;
-
-        /// <summary>
-        /// ToDateValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ToDateValidator1;
+        protected global::System.Web.UI.WebControls.Label DateToLabel;
 
         /// <summary>
         /// DateToError control.
@@ -132,13 +105,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox PlanBox;
 
         /// <summary>
-        /// PlanBoxValidator control.
+        /// PlanLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator PlanBoxValidator;
+        protected global::System.Web.UI.WebControls.Label PlanLabel;
 
         /// <summary>
         /// SeatCountBox control.
@@ -150,22 +123,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox SeatCountBox;
 
         /// <summary>
-        /// seatCountValidator control.
+        /// SeatLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator seatCountValidator;
-
-        /// <summary>
-        /// seatCountValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator seatCountValidator1;
+        protected global::System.Web.UI.WebControls.Label SeatLabel;
 
         /// <summary>
         /// CostBox control.
@@ -177,22 +141,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox CostBox;
 
         /// <summary>
-        /// costValidator control.
+        /// costLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator costValidator;
-
-        /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label costLabel;
 
         /// <summary>
         /// TourSaveButton control.

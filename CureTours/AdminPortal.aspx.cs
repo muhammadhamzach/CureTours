@@ -13,7 +13,7 @@ namespace CureTours
         protected void Page_Load(object sender, EventArgs e)
         {
             string label = Request.QueryString["label"];
-            if (label != "" || label !=null)
+            if (label != "" || label != null)
             {
                 DeleteLabel.Text = label;
             }
@@ -25,7 +25,7 @@ namespace CureTours
                     Response.Redirect("Login.aspx");
                 }
             }
-            catch { Response.Redirect("Login.aspx"); }
+            catch { }
             if (!Page.IsPostBack)
                 tour_detail_box();
         }

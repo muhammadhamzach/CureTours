@@ -42,24 +42,6 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.Label UsernameLabel;
 
         /// <summary>
-        /// usernamevalidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator usernamevalidator;
-
-        /// <summary>
-        /// usernamevalidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator usernamevalidator1;
-
-        /// <summary>
         /// PasswordBox control.
         /// </summary>
         /// <remarks>
@@ -69,22 +51,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox PasswordBox;
 
         /// <summary>
-        /// passwordvalidator control.
+        /// PasswordLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator passwordvalidator;
-
-        /// <summary>
-        /// passwordvalidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator passwordvalidator1;
+        protected global::System.Web.UI.WebControls.Label PasswordLabel;
 
         /// <summary>
         /// NameBox control.
@@ -96,22 +69,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox NameBox;
 
         /// <summary>
-        /// namevalidator control.
+        /// NameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator namevalidator;
-
-        /// <summary>
-        /// namevalidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator namevalidator1;
+        protected global::System.Web.UI.WebControls.Label NameLabel;
 
         /// <summary>
         /// TeamListDropDown control.
@@ -123,13 +87,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.DropDownList TeamListDropDown;
 
         /// <summary>
-        /// teamValidator control.
+        /// TeamListLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator teamValidator;
+        protected global::System.Web.UI.WebControls.Label TeamListLabel;
 
         /// <summary>
         /// PhoneBox control.
@@ -141,22 +105,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox PhoneBox;
 
         /// <summary>
-        /// mobilenumbervalidator control.
+        /// PhoneLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator mobilenumbervalidator;
-
-        /// <summary>
-        /// mobilenumbervalidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator mobilenumbervalidator1;
+        protected global::System.Web.UI.WebControls.Label PhoneLabel;
 
         /// <summary>
         /// EmailBox control.
@@ -168,22 +123,13 @@ namespace CureTours
         protected global::System.Web.UI.WebControls.TextBox EmailBox;
 
         /// <summary>
-        /// emailvalidator control.
+        /// EmailLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator emailvalidator;
-
-        /// <summary>
-        /// emailvalidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailvalidator1;
+        protected global::System.Web.UI.WebControls.Label EmailLabel;
 
         /// <summary>
         /// DescriptionBox control.

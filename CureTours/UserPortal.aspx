@@ -37,7 +37,7 @@
                 <asp:GridView ID="TourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="80%" ShowHeaderWhenEmpty="True" OnRowDataBound="TourGrid_RowDataBound" AllowPaging="True" OnPageIndexChanging="TourGrid_PageIndexChanging" PageSize="5">
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                    <PagerSettings PageButtonCount="5" />
+                    <PagerSettings PageButtonCount="5" Mode="NextPreviousFirstLast" FirstPageText="First" PreviousPageText="Previous" NextPageText="Next" LastPageText="Last" />
                 <PagerStyle ForeColor="Black" HorizontalAlign="Right" />
                 <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F7F7F7" />
@@ -66,7 +66,7 @@
                 <asp:GridView ID="acceptedTourGrid" runat="server"  BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="40%" ShowHeaderWhenEmpty="True" AllowPaging="True" OnPageIndexChanging="acceptedTourGrid_PageIndexChanging" PageSize="4">
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                    <PagerSettings PageButtonCount="5" />
+                    <PagerSettings PageButtonCount="5" Mode="NextPreviousFirstLast" FirstPageText="First" PreviousPageText="Previous" NextPageText="Next" LastPageText="Last"/>
                 <PagerStyle ForeColor="Black" HorizontalAlign="Right" />
                 <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F7F7F7" />

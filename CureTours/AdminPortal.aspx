@@ -39,7 +39,7 @@
                     <EditRowStyle HorizontalAlign="Center" />
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                    <PagerSettings PageButtonCount="5" />
+                    <PagerSettings PageButtonCount="5" Mode="NextPreviousFirstLast" FirstPageText="First" PreviousPageText="Previous" NextPageText="Next" LastPageText="Last"/>
                 <PagerStyle ForeColor="Black" HorizontalAlign="Right" />
                 <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F7F7F7" />
@@ -69,7 +69,7 @@
                     <asp:GridView ID="usersGrid" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Visible="False" AllowPaging="True" PageSize="4" OnPageIndexChanging="usersGrid_PageIndexChanging">
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                        <PagerSettings PageButtonCount="5" />
+                        <PagerSettings PageButtonCount="5" Mode="NextPreviousFirstLast" FirstPageText="First" PreviousPageText="Previous" NextPageText="Next" LastPageText="Last"/>
                         <PagerStyle  ForeColor="Black" HorizontalAlign="Right" />
                         <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                         <SortedAscendingCellStyle BackColor="#F7F7F7" />

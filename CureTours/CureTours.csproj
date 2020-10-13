@@ -105,6 +105,8 @@
     <Content Include="Pikaday\plugins\pikaday.jquery.js" />
     <Content Include="Pikaday\tests\methods.js" />
     <Content Include="Pikaday\tests\module.js" />
+    <Content Include="script\CreateTourScript.js" />
+    <Content Include="script\SignUpScript.js" />
     <Content Include="SignUp.aspx" />
     <Content Include="style\AdminPortalStyle.css" />
     <Content Include="style\CreateTourStyle.css" />
@@ -187,6 +189,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -22,7 +22,7 @@ namespace CureTours
                     Response.Redirect("Login.aspx");
                 }
             }
-            catch { Response.Redirect("Login.aspx"); }
+            catch {}
 
             if (!Page.IsPostBack)   //if tour is in edit mode, this will put all the details oin the box
             {
@@ -54,18 +54,15 @@ namespace CureTours
                 if (tourID.All(Char.IsDigit))
                     admin.tourSave_BS("EDIT_TOUR", tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
                 else
-                {
                     admin.tourSave_BS(tourID, TourTitle.Text, DateFromBox.Text, DateToBox.Text, PlanBox.Text, SeatCountBox.Text, CostBox.Text);
-                    Response.Redirect("CreateTour.aspx?ID=new");
-                }
-                    
-                TourMessage.Text = "Tour Details Modified";
+
+                Response.Redirect("AdminPortal.aspx?ID=0");
             }   
         }
 
         protected void ReturnButton_Click(object sender, EventArgs e)       //redirecting back to admin portal
         {
-            Response.Redirect("AdminPortal.aspx?ID=" + tourID);
+            Response.Redirect("AdminPortal.aspx?ID=0");
         }
     }
 }
