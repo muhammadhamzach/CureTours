@@ -74,8 +74,6 @@
     <Content Include="pics\LoginBackground.jpg" />
     <Content Include="pics\SignUpBackground.jpg" />
     <Content Include="pics\UserPortalBackground.jpg" />
-    <Content Include="script\CreateTourScript.js" />
-    <Content Include="script\SignUpScript.js" />
     <Content Include="SignUp.aspx" />
     <Content Include="style\AdminPortalStyle.css" />
     <Content Include="style\CreateTourStyle.css" />
