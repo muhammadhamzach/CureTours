@@ -70,7 +70,6 @@
     <Content Include="AdminPortal.aspx" />
     <Content Include="CreateTour.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="pics\Calendar-icon.png" />
     <Content Include="pics\CreateTourBackground.jpg" />
     <Content Include="pics\LoginBackground.jpg" />
     <Content Include="pics\SignUpBackground.jpg" />

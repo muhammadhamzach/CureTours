@@ -101,6 +101,7 @@ namespace CureTours
                 user.interestUser_BS(UserID, row.Cells[1].Text.ToString());
                 TourInterestLabel.Text = "Request Submitted!";
                 lb.Enabled = false;
+                Response.Redirect(Request.RawUrl, true);
             }
         }
 
