@@ -8,11 +8,7 @@
     <meta http-equiv="Expires" content="0"/>
     <meta http-equiv="Cache-Control" content="no-cache"/>
     <meta http-equiv="Pragma" content="no-cache"/>
-    <link href="Pikaday/css/pikaday.css" rel="stylesheet" />
-    <link href="Pikaday/css/theme.css" rel="stylesheet" />
-    <link href="Pikaday/css/triangle.css" rel="stylesheet" />
     <link href="style/CreateTourStyle.css" rel="stylesheet" />
-    <script src="Pikaday/pikaday.js"></script>
     <script src="script/CreateTourScript.js" type="text/javascript"></script>
     <title>Create Tour (admin)</title>
 </head>
@@ -29,62 +25,15 @@
             </p>
 
             <div class="text">Departure Date*
-                <asp:TextBox ID="DateFromBox" runat="server" placeholder ="DD-MM-YYYY" style="margin-left: 44px" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+                <asp:TextBox ID="DateFromBox" runat="server" style="margin-left: 44px" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled" TextMode="Date"></asp:TextBox>
                 <asp:Label ID="DateFromError" runat="server" ForeColor="Red"></asp:Label>
                 <asp:Label ID="DateFromLabel" runat="server" ForeColor="Red"></asp:Label>
-                <script type="text/javascript">
-                    var picker = new Pikaday({
-                        field: document.getElementById('DateFromBox'),
-                        format: 'D/M/YYYY',
-                        minDate: new Date(),
-                        maxDate: new Date('2030-12-31'),
-                        yearRange: [2000, 2030],
-                        theme: 'dark-theme',
-                        toString(date, format) {
-                            const day = date.getDate();
-                            const month = date.getMonth() + 1;
-                            const year = date.getFullYear();
-                            return `${day}-${month}-${year}`;
-                        },
-                        parse(dateString, format) {
-                            const parts = dateString.split('-');
-                            const day = parseInt(parts[0], 10);
-                            const month = parseInt(parts[1], 10) - 1;
-                            const year = parseInt(parts[2], 10);
-                            return new Date(day, month, year);
-                        }
-                    });
-                </script>
             </div>
 
-            <div class="text">
-                Return Date*
-                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px" placeholder ="DD-MM-YYYY" Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled"></asp:TextBox>
+            <div class="text"> Return Date*
+                <asp:TextBox ID="DateToBox" runat="server" style="margin-left: 70px"  Height="30px" Width="400px" Font-Size="13pt" AutoCompleteType="Disabled" TextMode="Date"></asp:TextBox>
                 <asp:Label ID="DateToLabel" runat="server" ForeColor="Red"></asp:Label>
                 <asp:Label ID="DateToError" runat="server" ForeColor="Red"></asp:Label>
-                <script type="text/javascript">
-                    var picker = new Pikaday({
-                        field: document.getElementById('DateToBox'),
-                        format: 'D/M/YYYY',
-                        minDate: new Date(),
-                        maxDate: new Date('2030-12-31'),
-                        yearRange: [2000, 2030],
-                        theme: 'dark-theme',
-                        toString(date, format) {
-                            const day = date.getDate();
-                            const month = date.getMonth() + 1;
-                            const year = date.getFullYear();
-                            return `${day}-${month}-${year}`;
-                        },
-                        parse(dateString, format) {
-                            const parts = dateString.split('-');
-                            const day = parseInt(parts[0], 10);
-                            const month = parseInt(parts[1], 10) - 1;
-                            const year = parseInt(parts[2], 10);
-                            return new Date(day, month, year);
-                        }
-                    });
-                </script>
             </div>
 
             <p class="text">Plan*

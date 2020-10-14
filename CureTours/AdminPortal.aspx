@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPortal.aspx.cs" Inherits="CureTours.AdminPortal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPortal.aspx.cs" Inherits="CureTours.AdminPortal" Culture = "en-GB"%>
 
 <!DOCTYPE html>
 
